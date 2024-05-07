@@ -14,27 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
 
-//   useEffect(() => {
-//     let scroll;
-//     if (typeof window !== "undefined") {
-    
-    
-//     import("locomotive-scroll").then((locomotiveModule) => {
-//       // scroll = new locomotiveModule.default();
-//         scroll = new locomotiveModule.default({
-//             el: document.querySelector("[data-scroll-container]"),
-//             smooth: true,
-//             smoothMobile: false,
-//             resetNativeScroll: true
-//         });
-//     });
-//   }
 
-//     // cleanup phase
-//     return () => {
-//         if (scroll) scroll.destroy();
-//     }
-// });
   return (
     <html lang="en">
     <head>

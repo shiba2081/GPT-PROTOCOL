@@ -10,7 +10,6 @@ import Global1 from '@/app/assets/img/Community/global1.png'
 
 import { useEffect, useState } from "react";
 import '@/app/styles/index.scss'
-import '@/app/styles/index.scss'
 import './style.scss'
 import CardN from "../components/CardN";
 

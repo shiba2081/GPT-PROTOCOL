@@ -1,13 +1,6 @@
 'use client'
 import Image from "next/image";
 import Hero from '@/app/assets/img/Network/network1.gif'
-import { useEffect, useState } from "react";
-import '@/app/styles/index.scss'
-import Card from '@/app/components/Card';
-import TemF from "@/app/components/TemF";
-import CardS from "@/app/components/CardS";
-import CardT from "@/app/components/CardT";
-import CardF from "@/app/components/CardF";
 import '@/app/styles/index.scss'
 import './style.scss'
 import TemB from "../components/TemB";

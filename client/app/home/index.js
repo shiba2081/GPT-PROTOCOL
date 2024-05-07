@@ -4,20 +4,16 @@ import Hero from '../assets/img/hero1.gif'
 import Hero2 from '../assets/img/hero2.png'
 import Hero3 from '../assets/img/hero3.gif'
 
-import mining from '@/app/assets/img/Home/mining.gif'
 
 import { useEffect, useState } from "react";
 import '@/app/styles/index.scss'
 import './style.scss'
 import Card from '@/app/components/Card';
 import TemF from "@/app/components/TemF";
-import CardT from "@/app/components/CardT";
-import CardF from "@/app/components/CardF";
 import TemS from "@/app/components/TemS";
 import TemT from "@/app/components/TemT";
 import Slider from "@/app/components/Slider";
 import dynamic from 'next/dynamic';
-import Marque from "@/app/components/marque";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
 

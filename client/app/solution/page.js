@@ -4,7 +4,6 @@ import Hero from '@/app/assets/img/Solution/solution1.gif'
 import { useEffect, useState } from "react";
 import '@/app/styles/index.scss'
 import TemF from "@/app/components/TemF";
-import '@/app/styles/index.scss'
 import './style.scss'
 
 export default function Solution() {

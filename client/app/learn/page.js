@@ -3,11 +3,6 @@ import Image from "next/image";
 import Hero from '@/app/assets/img/Learn/learn1.gif'
 import { useEffect, useState } from "react";
 import '@/app/styles/index.scss'
-import Card from '@/app/components/Card';
-import TemF from "@/app/components/TemF";
-import CardS from "@/app/components/CardS";
-import CardT from "@/app/components/CardT";
-import CardF from "@/app/components/CardF";
 import './style.scss'
 
 export default function Learn() {

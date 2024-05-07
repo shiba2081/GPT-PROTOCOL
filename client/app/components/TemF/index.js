@@ -1,6 +1,6 @@
 import './style.scss'
 import Image from 'next/image';
-import internet from '../../assets/img/internetofAI.gif'
+import internet from '../../assets/img/Home/internetAi.gif'
 import mining from '../../assets/img/Home/mining.gif'
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';

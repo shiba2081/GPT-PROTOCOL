@@ -1,0 +1,39 @@
+.TemF {
+    padding: 40px 80px 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    .left {
+        width: 50%;
+        .left-head {
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 76px;
+            span {
+                color: #DDFFCB;
+            }
+        }
+        .left-li {
+            font-size: 20px;
+            margin-bottom: 43px;
+            display: flex;
+            gap: 30px;
+            color: #E3E3E3;
+        }
+    }
+    .right {
+        // width: 50%;
+    }
+    ul {
+        font-size: 24px;
+        display: flex;
+        flex-direction: column;
+        column-gap: 30px;
+        row-gap: 30px;
+        color: #E3E3E3;
+    }
+    .lefts-head {
+        font-size: 32px;
+        font-weight: 500;
+        color: #DDFFCB;
+    }
+}

@@ -1,0 +1,26 @@
+.cardN {
+    position: relative;
+    width: 295px;
+    height: 295px;
+    // padding-bottom: 60px;
+    padding: 72px 16px 40px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s;
+    text-align: center;
+    .cardn-desc {
+        color: #858585;
+        font-size: 20px;
+        transition: all 0.3s;
+    }
+    
+}
+.cardN:hover {
+    background: #1B1F19;
+    box-shadow: 0 20px 50px 10px rgba(0, 0, 0, 1);
+    .cardn-desc {
+        color: #FFFFFF;
+    }
+}

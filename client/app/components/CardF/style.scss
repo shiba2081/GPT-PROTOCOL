@@ -1,0 +1,51 @@
+.cardF {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    padding: 32px 11px 40px 28px;
+    .cardf-title {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 32px;
+    }
+    .cardf-detail {
+        position: absolute;
+        // top: 50%;
+        // left: 50%;
+        transform: translate(0, -50%);
+        opacity: 0;
+        transition: opacity 0.3s, transform 0.3s;
+        
+        .cardf-desc {
+            font-size: 20px;
+            color: #fff;
+            // transition: color 0.3s;
+            margin-bottom: 8px;
+            transition: position 0.3s ease-in;
+        }
+        
+        
+    }
+    .cardf-desc2 {
+        font-size: 20px;
+        color: #858585;
+    }
+    
+}
+.cardF:hover {
+    .cardf-title {
+        color: #DDFFCB;
+    }
+    background: #1B1F19;
+    box-shadow: 0 20px 50px 10px rgba(0, 0, 0, 1);
+    .cardf-desc2 {
+        color: #FFFFFF;
+    }
+}
+.cardF:hover .cardf-detail {
+    opacity: 1;
+    transform: translate(0, -16%);
+}
+.card-hw {
+    width: 610px !important;
+}

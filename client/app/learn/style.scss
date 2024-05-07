@@ -1,0 +1,12 @@
+.experiment {
+    .left-b, .right-b {
+        width: 560px;
+    }
+}
+.video-gap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // flex-wrap: nowrap;
+    gap: 54px;
+}

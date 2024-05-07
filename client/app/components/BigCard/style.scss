@@ -1,0 +1,43 @@
+.big-card {
+    display: flex;
+    justify-content: center;
+    .cardB{
+        position: relative;
+        width: 1240px;
+        height: 1306px;
+        .card-flex {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            padding-top: 60px;
+            gap: 33px;
+            .card-div1, .card-div3 {
+                position: relative;
+                width: 30%;
+            }
+            .t-align-end {
+                text-align: end;
+            }
+            .big-card-title {
+                position: absolute;
+                top: 60px;
+                left: 60px;
+                font-size: 40px;
+                font-weight: 500;
+                color: #DDFFCB;
+            }
+            .cardb-dialog {
+                position: absolute;
+                .dialog-title {
+                    font-size: 24px;
+                    font-weight: 500;
+                }
+                
+                .dialog-desc {
+                    font-size: 20px;
+                    color: #858585;
+                }
+            }
+        }
+    }
+}

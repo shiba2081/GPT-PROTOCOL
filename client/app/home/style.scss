@@ -1,0 +1,108 @@
+.hero-shape {
+    position: absolute;
+    height: 36vw;
+    width: 44vw;
+    // background: green;
+    // opacity: 0.5;
+    // border-radius: 50%;
+    // border-top-left-radius: 30%;
+    // border-bottom-left-radius: 30%;
+    border-top-right-radius: 60%;
+    border-bottom-right-radius: 60%;
+    z-index: 9;
+    left: 0;
+    top: 200px;
+    filter: blur(20px);
+
+    .hero1 {
+        position: absolute;
+        height: 30vw;
+        width: 30vw;
+        // background: rgb(4, 164, 4);
+        // opacity: 0.5;
+        // border-radius: 50%;
+        border-top-left-radius: 30%;
+        border-bottom-left-radius: 30%;
+        border-top-right-radius: 40%;
+        border-bottom-right-radius: 40%;
+        z-index: 9;
+        // left: 0;
+        // top: 200px;
+        filter: blur(20px);
+    }
+    .hero2 {
+        position: absolute;
+        height: 20vw;
+        width: 20vw;
+        background: rgb(19, 107, 19);
+        // opacity: 0.5;
+        border-radius: 50%;
+        // border-top-left-radius: 30%;
+        // border-bottom-left-radius: 30%;
+        // border-top-right-radius: 40%;
+        // border-bottom-right-radius: 40%;
+        z-index: 9;
+        left: 40px;
+        // top: 200px;
+        filter: blur(10px);
+        animation-name: anime2;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+    }
+    .hero3 {
+        position: absolute;
+        height: 20vw;
+        width: 20vw;
+        background: rgb(19, 107, 19);
+        // opacity: 0.5;
+        // border-radius: 50%;
+        border-radius: 50%;
+        z-index: 9;
+        left: 100px;
+        // top: 200px;
+        filter: blur(10px);
+            animation-name: anime1;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+    }
+}
+// .hero2 {
+//     position: absolute;
+//     height: 36vw;
+//     width: 36vw;
+//     background: rgb(4, 161, 4);
+//     opacity: 0.5;
+//     border-top-right-radius: 60%;
+//     border-bottom-right-radius: 60%;
+//     // border-radius: 50%;
+//     z-index: 9;
+//     left: 0;
+//     top: 200px;
+//     // filter: blur(30px);
+//     animation-name: anime;
+//     animation-duration: 3s;
+//     animation-timing-function: linear;
+//     animation-iteration-count: infinite;
+//     animation-direction: alternate;
+// }
+
+@keyframes anime1 {
+   from {
+    transform: translate(-10%,20%);
+   } 
+   to {
+    transform: translate(10%,-30%);
+   }
+}
+@keyframes anime2 {
+    from {
+     transform: translate(20%,-10%);
+    } 
+    to {
+     transform: translate(-20%,20%);
+    }
+ }

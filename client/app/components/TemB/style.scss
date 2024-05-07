@@ -1,0 +1,12 @@
+.cardB-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    // flex-wrap: wrap;
+    // gap: 20px;
+    .cardB-flex {
+        display: flex;
+        gap: 20px;
+    }
+}

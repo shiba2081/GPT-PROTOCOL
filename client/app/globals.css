@@ -1,0 +1,54 @@
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #070707;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 810px;
+  display: flex;
+  justify-content: end;
+  background: radial-gradient( farthest-corner at 100px 500px, #324B19 0, #0B0C0B 52%, #000 100%);
+}
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #11bd2e; /* Color of the scrollbar handle on hover */
+}
+.align-center {
+  display: flex;
+  justify-content: center;
+}

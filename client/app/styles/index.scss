@@ -1,0 +1,256 @@
+
+
+.no-motion {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.motion {
+    transition: opacity 0.2s;
+    opacity: 1;
+}
+.home-heading {
+    position: absolute;
+    z-index: 11;
+    top: 270px;
+    left: 100px;
+    width: 588px;
+    .home-title {
+        font-size: 50px;
+        font-weight: 700;
+    }
+    .home-desc {
+        font-size: 20px;
+        margin-bottom: 36px;
+    }
+    .button-gap {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+    
+}
+.home-button {
+    max-width: 242px;
+    height: 40px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 36px;
+    font-size: 18px;
+}
+.button1 {
+    border: 1px solid #CAFEAE;
+    color: #CAFEAE;
+    background: transparent;
+} 
+.button2 {
+    border: 1px solid #fff;
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+} 
+
+.button1:hover {
+    background: rgba(202, 254, 174, 0.1);
+}
+
+.blur-div {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    height: 280px;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0), rgba(7,7,7,1));
+}
+.card-default {
+    background: linear-gradient(#131512, #090A09); /* Background gradient */
+    border-radius: 10px;
+    transition: background-color 0.4s;
+    background-clip: padding-box;
+    overflow: hidden;
+}
+.card-default::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 1px; /* control the border thickness */
+    background: linear-gradient(rgba(86,97,84,1), rgba(61,57,68,0.51));;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+.experiment {
+    position: relative;
+    width: 100%;
+}
+.cardList {
+    display: flex;
+    padding: 0 148px;
+    background: #070707;
+    // background: radial-gradient( circle,#324B19 0, #0B0C0B 42%, #0B0C0B 100%);
+    // background-size: cover;
+    // background-position: left bottom;
+    position: relative;
+    width: 100%;
+    // top: 810px;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 120px;
+}
+.flex {
+    display: flex;
+}
+.temp1 {
+    position: relative;
+    width: 100%;
+    // top: 1400px;
+}
+.tempb {
+    position: relative;
+    width: 100%;
+    // top: 1400px;
+}
+.card-second {
+    position: relative;
+    width: 100%;
+    padding: 0 100px;
+    // top: 2000px;
+}
+.card-third {
+    position: relative;
+    width: 100%;
+    // top: 2500px;
+}
+.card-fourth {
+    position: relative;
+    width: 100%;
+    // top: 3200px;
+}
+.card-big {
+    position: relative;
+    width: 100%;
+    // top: 3400px;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+}
+.common {
+    .gif {
+        position: relative;
+        top: 110px;
+        right: 100px;
+    }
+}
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+.content-between {
+    justify-content: space-between;
+}
+.text-40 {
+    font-size: 40px;
+    font-weight: 500;
+}
+.text-48 {
+    font-size: 48px;
+    font-weight: 500;
+}
+.text-32 {
+    font-size: 32px;
+    font-weight: 500;
+}
+.text-20 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.text-20n {
+    font-size: 20px;
+    font-weight: 400;
+}
+.text-24 {
+    font-size: 24px;
+    font-weight: 700;
+}
+.text-36 {
+    font-size: 36px;
+    font-weight: 500;
+}
+.text-52 {
+    font-size: 52px;
+    font-weight: 500;
+}
+.mb-62 {
+    margin-bottom: 62px;
+}
+.mb-60 {
+    margin-bottom: 60px;
+}
+.mt-120 {
+    margin-top: 120px;
+}
+.mt-21 {
+    margin-top: 21px;
+}
+.mt-32 {
+    margin-top: 32px;
+}
+.mt-60 {
+    margin-top: 60px;
+}
+.mt-160 {
+    margin-top: 160px;
+}
+.mt-130 {
+    margin-top: 130px;
+}
+.mt-292 {
+    margin-top: 292px;
+}
+.mt-80 {
+    margin-top: 80px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.mb-32 {
+    margin-bottom: 32px;
+}
+.mb-60 {
+    margin-bottom: 60px;
+}
+.mb-80 {
+    margin-bottom: 80px;
+}
+.pl-100 {
+    padding-left: 100px;
+}
+.pl-30 {
+    padding-left: 30px;
+}
+.plr {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.wc {
+    color: #DDFFCB;
+}
+.lc {
+    color: #DBDBDB;
+}
+.lh-70 {
+    line-height: 70px;
+}
+.lh-40 {
+    line-height: 40px;
+}
+.gap-20 {
+    gap: 20px;
+}
+.gap-54 {
+    gap: 54px;
+}

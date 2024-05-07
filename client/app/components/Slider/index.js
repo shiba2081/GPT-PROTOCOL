@@ -1,0 +1,81 @@
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
+import "./style.scss"
+import Slider1 from "../../assets/img/Home/News/slider1.gif"
+import Slider2 from "../../assets/img/Home/News/slider2.png"
+import Slider3 from "../../assets/img/Home/News/slider3.png"
+import Image from 'next/image';
+import { useState } from "react"
+import dynamic from 'next/dynamic';
+const Icon = dynamic(()=> import('../Icons'))
+
+const images = [
+  {image:Slider1,desc:'Exciting news! "GPT_protocol" joins NVIDIA Developer Program, enhancing our AI tools for users.'},
+  {image:Slider2,desc:'Navigating Regulatory Challenges in DePin Innovation'},
+  {image:Slider3,desc:'Buy, Stake & Earn More'}]
+
+export default function Slider() {
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const [loaded, setLoaded] = useState(false)
+    const [opacities, setOpacities] = useState([])
+  
+    const [sliderRef, instanceRef] = useKeenSlider({
+        initial: 0,
+        slideChanged(slider) {
+        setCurrentSlide(slider.track.details.rel)
+        },
+        created() {
+        setLoaded(true)
+        },
+        slides: images.length,
+        loop: true,
+        detailsChanged(s) {
+            const new_opacities = s.track.details.slides.map((slide) => slide.portion)
+            setOpacities(new_opacities)
+        },
+    })
+  
+    return (
+    <div className="slider-wrapper">
+    {loaded && instanceRef.current && (
+          <>
+            <div
+              onClick={(e) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+              style={{cursor:"pointer"}}
+            ><Icon name='left-arrow' fill='none' width={52} height={52} /></div>
+          </>
+        )}
+      <div ref={sliderRef} className="fader">
+        {images.map((src, idx) => (
+          <div>
+          <div
+            key={idx}
+            className="fader__slide"
+            style={{ opacity: opacities[idx] }}
+          >
+            <Image src={src.image} />
+          </div>
+          <div key={idx}
+            className="fader__slide src-desc"
+            style={{ opacity: opacities[idx] }}>
+            <div className="desc">{src.desc}</div>
+            <div className="learn">Learn More<Icon name='arrow-left' fill='#000' width={24} height={24} /></div></div>
+          </div>
+        ))}
+      </div>
+      {loaded && instanceRef.current && (
+          <>
+
+            <div
+              onClick={(e) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+              style={{cursor:"pointer"}}
+            ><Icon name='right-arrow' fill='none' width={52} height={52} /></div>
+          </>
+        )}
+    </div>
+    )
+  }

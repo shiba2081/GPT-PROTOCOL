@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import Hero from '@/app/assets/img/Solution/solution1.gif'
+import Hero from '@/app/assets/img/Solution/solution.gif'
 import { useEffect, useState } from "react";
 import '@/app/styles/index.scss'
 import TemF from "@/app/components/TemF";

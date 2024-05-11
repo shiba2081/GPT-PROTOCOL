@@ -9,16 +9,17 @@ import { useState } from "react"
 import dynamic from 'next/dynamic';
 const Icon = dynamic(()=> import('../Icons'))
 
-const images = [
-  {image:Slider1,desc:'Exciting news! "GPT_protocol" joins NVIDIA Developer Program, enhancing our AI tools for users.'},
-  {image:Slider2,desc:'Navigating Regulatory Challenges in DePin Innovation'},
-  {image:Slider3,desc:'Buy, Stake & Earn More'}]
+// const images = [
+//   {image:Slider1,desc:'Exciting news! "GPT_protocol" joins NVIDIA Developer Program, enhancing our AI tools for users.'},
+//   {image:Slider2,desc:'Navigating Regulatory Challenges in DePin Innovation'},
+//   {image:Slider3,desc:'Buy, Stake & Earn More'}]
 
-export default function Slider() {
+export default function Slider(props) {
+    const {images, child, width} = props;
     const [currentSlide, setCurrentSlide] = useState(0)
     const [loaded, setLoaded] = useState(false)
     const [opacities, setOpacities] = useState([])
-  
+
     const [sliderRef, instanceRef] = useKeenSlider({
         initial: 0,
         slideChanged(slider) {
@@ -37,7 +38,7 @@ export default function Slider() {
   
     return (
     <div className="slider-wrapper">
-    {loaded && instanceRef.current && (
+    {width>720 && loaded && instanceRef.current && (
           <>
             <div
               onClick={(e) =>
@@ -47,7 +48,11 @@ export default function Slider() {
             ><Icon name='left-arrow' fill='none' width={52} height={52} /></div>
           </>
         )}
-      <div ref={sliderRef} className="fader">
+        
+      <div ref={sliderRef} className="fader"
+      onClick={(e) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }>
         {images.map((src, idx) => (
           <div>
           <div
@@ -55,7 +60,7 @@ export default function Slider() {
             className="fader__slide"
             style={{ opacity: opacities[idx] }}
           >
-            <Image src={src.image} />
+            <Image src={src.image==="Slider1"? Slider1:src.image==="Slider2"? Slider2:Slider3} />
           </div>
           <div key={idx}
             className="fader__slide src-desc"
@@ -63,9 +68,10 @@ export default function Slider() {
             <div className="desc">{src.desc}</div>
             <div className="learn">Learn More<Icon name='arrow-left' fill='#000' width={24} height={24} /></div></div>
           </div>
-        ))}
+        ))
+        }
       </div>
-      {loaded && instanceRef.current && (
+      {width>720 && loaded && instanceRef.current && (
           <>
 
             <div

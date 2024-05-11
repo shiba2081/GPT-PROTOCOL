@@ -3,10 +3,12 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    
     // flex-wrap: wrap;
     // gap: 20px;
     .cardS-flex {
         display: flex;
         gap: 20px;
+        width: 100%;
     }
 }

@@ -106,3 +106,64 @@
      transform: translate(-20%,20%);
     }
  }
+
+ .card-first {
+    margin-bottom: 132px;
+ }
+
+ @media screen and (max-width: 720px) {
+    .card-first {
+        // .slider-wrapper {
+        //     .fader img {
+        //         width: 162px !important;
+        //         object-fit: contain !important;
+        //         position: relative !important;
+        //     }
+        // }
+    }
+    .cardS-section {
+        gap: 10px !important;
+    }
+   
+    .cardS-flex {
+        gap: 10px !important;
+    }
+    .cardS {
+        height: 200px !important;
+
+        .card-detail {
+            padding: 0 16px !important;
+            .cards-title {
+                font-size: 26px !important;
+            }
+            .cards-desc {
+                font-size: 14px !important;
+            }
+        }
+    }
+    .gif {
+        position: absolute;
+        top: 12%;
+        img {
+        }
+    }
+    .home-heading {
+        top: 60% !important;
+        left: 10% !important;
+        // transform: translate(-50%, -50%) !important;
+        width: 400px !important;
+
+        .home-title {
+            font-size: 32px !important;
+            margin-bottom: 50px !important;
+        }
+        .home-desc {
+            width: 300px !important;
+            font-size: 16px !important;
+        }
+    }
+    .home-button {
+        font-size: 14px !important;
+        height: 34px !important;
+    }
+ }

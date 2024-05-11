@@ -107,6 +107,7 @@
 .temp1 {
     position: relative;
     width: 100%;
+    padding: 0 100px;
     // top: 1400px;
 }
 .tempb {
@@ -143,6 +144,19 @@
         position: relative;
         top: 110px;
         right: 100px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .temp1, .card-second, .card-third {
+        padding: 0 30px !important;
+    }
+    .text-36 {
+        font-size: 28px !important;
+        line-height: 36px;
+    }
+    .text-52 {
+        font-size: 38px !important;
     }
 }
 .justify-center {
@@ -253,4 +267,7 @@
 }
 .gap-54 {
     gap: 54px;
+}
+.t-align-center {
+    text-align: center;
 }

@@ -14,14 +14,16 @@ import TemS from "@/app/components/TemS";
 import TemT from "@/app/components/TemT";
 import Slider from "@/app/components/Slider";
 import dynamic from 'next/dynamic';
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue, useTransform, spring, useAnimation  } from "framer-motion";
+import SliderF from "../components/SliderF";
+import CardT from "../components/CardT";
 
 
 const Icon = dynamic(()=> import('../components/Icons'))
 
 export default function Home() {
-  const x = useMotionValue(0)
-  const opacity = useTransform(x, [-100, 0, 100], [0, 1, 0])
+  const controls = useAnimation();
+  const [point, setPoint] = useState({ x: 436, y: 242 });
   const [gif1, setGif1] = useState(false)
   const [gif2, setGif2] = useState(false)
   const cardList = [
@@ -46,6 +48,17 @@ export default function Home() {
       description: "Miners receive rewards for providing affordable AI computing power to open source AI developers."
     },
   ]
+  const cardListT = [
+    {id:1,title:"Learn",description:"Dive into our quick guides to learn more about the Internet of AI."},
+    {id:2,title:"Build",description:"Start crafting your projects with our developer tools."},
+    {id:3,title:"Github",description:"Explore our repositories and contribute to open-source."},
+    {id:4,title:"Community",description:"Connect, collaborate, and share knowledge with peers."},
+  ]
+  const images = [
+    {image:"Slider1",desc:'Exciting news! "GPT_protocol" joins NVIDIA Developer Program, enhancing our AI tools for users.'},
+    {image:"Slider2",desc:'Navigating Regulatory Challenges in DePin Innovation'},
+    {image:"Slider3",desc:'Buy, Stake & Earn More'}]
+  
   useEffect(()=> {
     setTimeout(()=>{
       setGif1(true)
@@ -55,6 +68,38 @@ export default function Home() {
       setGif2(true)
     },3230)
   },[])
+  
+  const [screenSize, setScreenSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+//   const findmypoint = (event) => {
+//     const rect = event.target.getBoundingClientRect();
+//     const x = event.clientX - rect.left;
+//     const y = event.clientY - rect.top;
+//     setPoint({ x, y });
+//     console.log(x,y)
+// }
+// const backTo = () => {
+//     const x = 436;
+//     const y = 242;
+//     console.log("backto")
+//     controls.start({ d: `M 10 250 Q ${x} ${y} 980 250`, transition: { type: 'spring', damping: 1, stiffness: 200 } });
+    
+// }
   return (
     <div style={{position:"relative"}}>
     <div 
@@ -71,6 +116,8 @@ export default function Home() {
         <div className="hero2"></div>
         <div className="hero3"></div>
     </div> */}
+    {screenSize.width>720 ? 
+    <>
     <div className="gif">
       {gif1? <Image priority={true} src={Hero2} width={1440} height={810} style={{mixBlendMode: "screen"}}/>:gif2? <Image src={Hero3} width={1440} height={810} style={{mixBlendMode: "screen"}}/>:<Image priority={true} src={Hero} width={1440} height={810} style={{mixBlendMode: "screen"}}/>}
     </div>
@@ -84,33 +131,77 @@ export default function Home() {
     </div>
     
     <div className="blur-div"></div>
+    </>:
+    <>
+    <div className="gif">
+      <Image src={Hero3} width={720} height={405} style={{mixBlendMode: "screen"}}/>
+    </div>
+    <div className="blur-div"></div>
+    <div className={`home-heading`}>
+      <div className="home-title mb-80">Censorship-Resistant Intelligence</div>
+      <div className="home-desc">Connecting AI developers and miners through Proof of Resources.</div>
+      <div className="button-gap">
+        <div className="home-button button1">Start Mining <Icon name='arrow-left' fill='#CAFEAE' width={24} height={24} /></div>
+        <div className="home-button button2">Start Building <Icon name='arrow-left' fill='#fff' width={24} height={24} /></div>
+      </div>
+    </div>
     
+    
+    </>
+    }
     
     </div>
+    
     {/* <Marque/> */}
     <div className="experiment">
+    {/* <div 
+    // onHoverStart={(e) => console.log('Hover starts',e)} 
+    // className='justify-center' ref={ref} 
+    // onMouseEnter={(dets)=> findmypoint(dets)}
+    style={{
+                position: 'relative',
+                width: '100%',
+                height: '500px',
+                backgroundColor: '#070707',
+            }}
+    onMouseMove={(dets)=> findmypoint(dets)}
+    onMouseLeave={()=> backTo()}
+    >
+    <svg width="100%" height="500" xmlns="http://www.w3.org/2000/svg">
+    <motion.path 
+    d={`M 10 250 Q ${point.x} ${point.y} 980 250`}
+    stroke="white" fill="transparent" animate={controls} key={Math.random()+point.x+point.y}/>
+    </svg>
     
+    </div> */}
     
-    {/* <iframe src="https://player.vimeo.com/video/940693289?h=9aa6937a7f&autoplay=1&muted=1" width="640" height="268" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> */}
     <div 
     // data-scroll data-scroll-speed="-.2"
     >
+    
+    {/* {screenSize.width>720 &&
     <motion.div
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .4}}
- className="justify-center text-36 mb-32 mt-60">Designed for Trusted Automation</motion.div>
-    <motion.div
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className="cardList">
-    {cardList.map((item)=> {
-    return <Card img={item.img} title={item.title} description={item.description}/>
-    })}
-    </motion.div>
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className="cardList">
+      {cardList.map((item,index)=> {
+              return <Card key={index} img={item.img} title={item.title} description={item.description}/>
+              })}
+    </motion.div>} */}
+    
     </div>
-    <div className="temp1" style={{padding:"0 100px"}}>
-      <Slider/>
+    <div className="temp1 card-first">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ease:[0.76, 0, 0.24, 1],duration: .4}}
+      className="justify-center text-36 mb-32 mt-60 t-align-center">Designed for Trusted Automation</motion.div>
+    {/* {screenSize.width<720 && */}
+          <SliderF images={cardList} child={"first"} width={screenSize.width}/>
+      {/* } */}
+    </div>
+    <div className="temp1">
+      <Slider images={images} child={"second"} width={screenSize.width}/>
     </div>
     <div 
     // data-scroll data-scroll-speed="-.4" 
@@ -126,19 +217,23 @@ export default function Home() {
     {/* <div className="temp1">
     <Image src={mining} layout="fill" style={{mixBlendMode: "screen"}}/>
     </div> */}
-    <motion.div
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className="text-52 mb-60 mt-80 pl-100">A Scalable and Secure AI Blockchain</motion.div>
     <div className="card-second">
-    <TemS/>
-    </div>
     <motion.div
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className="text-52 mb-60 mt-292 pl-100">Resources</motion.div>
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className="text-52 mb-60 mt-80">A Scalable and Secure AI Blockchain</motion.div>
+        
+        <TemS/>
+    </div>
     <div className="card-third plr-100">
-    <TemT/>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className="text-52 mb-60 mt-292">Resources</motion.div>
+    {screenSize.width>720 ?
+    <TemT/>:
+    <SliderF images={cardListT} child={"third"} width={screenSize.width}/>
+    }
     </div>
     </div>
     </div>

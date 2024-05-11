@@ -32,6 +32,7 @@
 .copyright {
     padding: 37px 54px;
     text-align: center;
+    font-size: 19px;
 }
 .gap-84 {
     gap: 84px;
@@ -45,4 +46,33 @@
 .justify-center {
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width: 720px) {
+    .footer-container {
+        padding: 40px 30px 0 30px;
+    }
+    .footer {
+        padding: 0;
+        flex-direction: column;
+        .link-title {
+            font-size: 16px;
+        }
+        .link-li {
+            font-size: 14px;
+        }
+        .footer-content {
+            flex-direction: column;
+        }
+        .m-auto {
+            margin: auto;
+        }
+        .footer-info {
+            gap: 12px;
+            justify-content: space-between;
+        }
+    }
+    .copyright {
+        font-size: 10px;
+    }
 }

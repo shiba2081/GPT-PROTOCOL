@@ -1,11 +1,35 @@
 .TemN {
-    padding: 0 100px 0 100px;
+    //padding: 0 100px 0 100px;
     display: flex;
     justify-content: center;
+    .left {
+        width: 50%;
+    }
     .right {
+        width: 50%;
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        width: 610px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .flexn {
+        flex-direction: column;
+        .left, .right {
+            width: 100%;
+            gap: 10px !important;
+        }
+        .left {
+            .cardN-big {
+                height: 400px !important;
+
+                img {
+                    width: 300px !important;
+                    height: 300px !important;
+                }
+            }
+            
+        }
     }
 }

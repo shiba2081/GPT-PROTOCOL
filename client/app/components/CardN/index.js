@@ -12,10 +12,23 @@ const Icon = dynamic(()=> import('../Icons'))
 
 export default function CardN(props) {
   const [isHovered, setIsHovered] = useState(false)
+
+  const openLink = (label) => {
+    if (label==="Discord") {
+      window.open("https://discord.gg/gptprotocol")
+    } else if (label==="Telegram") {
+      window.open("https://t.me/gpt_protocol")
+    } else if (label==="Whatsapp") {
+      window.open("https://chat.whatsapp.com/BgPBqhoGkP9411NEOYnRZe")
+    } else if (label==="Twitter") {
+      window.open("https://x.com/gpt_protocol")
+    }
+  }
   return (
     <div className='card-default cardN'
     onMouseEnter={()=> setIsHovered(true)}
-    onMouseLeave={()=> setIsHovered(false)}>
+    onMouseLeave={()=> setIsHovered(false)}
+    onClick={()=>openLink(props?.item?.label)}>
         <div style={{scale: isHovered? 1.1:1}}>{props?.child==="second"?  
         <Image src={props?.item?.label==="Discord"? Discord:
         props?.item?.label==="Telegram"? Telegram:

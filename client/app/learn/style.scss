@@ -10,3 +10,21 @@
     // flex-wrap: nowrap;
     gap: 54px;
 }
+@media screen and (max-width: 720px) {
+    .arch {
+        img {
+            width: 291px !important;
+            height: 168px !important;
+        }
+    }
+    .v1 {
+        flex-direction: column;
+        width: 100% !important;
+
+        iframe {
+            width: 100% !important;
+            height: 291px !important;
+        }
+    }
+}
+

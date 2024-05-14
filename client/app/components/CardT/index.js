@@ -6,8 +6,21 @@ import res4 from "../../assets/img/Home/Resources4.gif"
 import Image from 'next/image';
 
 export default function CardT(props) {
+
+  const openLink = (label) => {
+    if (label==="Learn") {
+      window.open("/learn", "_self")
+    } else if (label==="Build") {
+      window.open("/build", "_self")
+    } else if (label==="Github") {
+      window.open("https://x.com/gpt_protocol")
+    } else if (label==="Community") {
+      window.open("/community", "_self")
+    }
+  }
+
   return (
-    <div className='card-default cardT'>
+    <div className='card-default cardT' onClick={()=>openLink(props?.title)}>
     <div className='card-gif'>
     <Image src={props.id===1 ? res1:props.id===2? res2:props.id===3? res3:res4} width={180} height={180} style={{mixBlendMode: "screen"}}/>
     </div>

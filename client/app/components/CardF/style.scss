@@ -47,5 +47,31 @@
     transform: translate(0, -16%);
 }
 .card-hw {
-    width: 610px !important;
+    width: 100% !important;
+}
+
+@media screen and (max-width: 720px) {
+    .cardF {
+        height: 72px !important;
+        transition: height 0.3s !important;
+        padding: 24px 11px 40px 28px !important;
+        .cardf-title {
+            font-size: 18px !important;
+            margin-bottom: 28px !important;
+        }
+
+        .cardf-detail {
+            
+            .cardf-desc {
+                font-size: 14px !important;
+            }
+        }
+        .cardf-desc2 {
+            font-size: 14px !important;
+        }
+    }
+    .cardF:hover {
+        height: 160px !important;
+    }
+
 }

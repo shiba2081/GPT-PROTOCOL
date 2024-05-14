@@ -53,7 +53,7 @@ export default function TemF({ch}) {
     <motion.div
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className='left' style={{paddingTop:"90px"}}>
+  transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className='left' >
             <div className='lefts-head mb-30'>Benefits</div>
             <ul>
               <li>Earn rewards by contributing computational power.</li>
@@ -74,7 +74,7 @@ export default function TemF({ch}) {
     <motion.div
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className='left' style={{paddingTop:"40px"}}>
+  transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className='left'>
             <div className='lefts-head mb-30'>Benefits</div>
             <ul>
               <li>Earn rewards by contributing computational power.</li>
@@ -93,7 +93,7 @@ export default function TemF({ch}) {
     <motion.div
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className='left' style={{paddingTop:"90px"}}>
+  transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className='left'>
             <div className='lefts-head mb-30'>Benefits</div>
             <ul>
               <li>Earn rewards by contributing computational power.</li>

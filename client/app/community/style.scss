@@ -7,3 +7,24 @@
     display: flex;
     justify-content: center;
 }
+
+@media screen and (max-width: 720px) {
+    .cardC {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px !important;
+        .cardN {
+            height: 140px !important;
+            img {
+                width: 80px !important;
+                height: 80px !important;
+            }
+        }
+    }
+    .cardC-buy {
+        img {
+            width: 100px !important;
+            height: 100px !important;
+        }
+    }
+}

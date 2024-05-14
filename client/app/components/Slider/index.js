@@ -38,14 +38,15 @@ export default function Slider(props) {
   
     return (
     <div className="slider-wrapper">
-    {width>720 && loaded && instanceRef.current && (
+    {loaded && instanceRef.current && (
           <>
             <div
+            className="left-arrow"
               onClick={(e) =>
                 e.stopPropagation() || instanceRef.current?.prev()
               }
               style={{cursor:"pointer"}}
-            ><Icon name='left-arrow' fill='none' width={52} height={52} /></div>
+            >{width>720 ? <Icon name='left-arrow' fill='none' width={52} height={52} />:<Icon name='arrow-right' fill='white' width={20} height={20} />}</div>
           </>
         )}
         
@@ -71,15 +72,16 @@ export default function Slider(props) {
         ))
         }
       </div>
-      {width>720 && loaded && instanceRef.current && (
+      {loaded && instanceRef.current && (
           <>
 
             <div
+              className="right-arrow"
               onClick={(e) =>
                 e.stopPropagation() || instanceRef.current?.next()
               }
               style={{cursor:"pointer"}}
-            ><Icon name='right-arrow' fill='none' width={52} height={52} /></div>
+            >{width>720 ? <Icon name='right-arrow' fill='none' width={52} height={52} />:<Icon name='arrow-left' fill='white' width={20} height={20} />}</div>
           </>
         )}
     </div>

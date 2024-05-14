@@ -1,9 +1,11 @@
 'use client'
 import Image from "next/image";
 import Hero from '@/app/assets/img/Learn/learn1.gif'
+import Arch from '@/app/assets/img/Learn/ARCH_PNG.png'
 import { useEffect, useState } from "react";
 import '@/app/styles/index.scss'
 import './style.scss'
+import Loader from "../components/Loader";
 
 export default function Learn() {
   const cardList = [
@@ -26,9 +28,52 @@ export default function Learn() {
     {title:"Improved Data Sharing",desc:"Blockchain enables secure and transparent data sharing for AI training and operations."},
     {title:"Autonomous Applications",desc:"Intelligent decentralized autonomous applications (DApps), open up new possibilities for trusted automation and commercialization."},
   ]
+
+  const [screenSize, setScreenSize] = useState({
+    width: typeof window !== 'undefined'? window.innerWidth:0,
+    height: typeof window !== 'undefined'? window.innerHeight:0,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div style={{position:"relative"}}>
-    <div className="home-container common">
+
+    {screenSize.width===0?
+      <Loader/>:screenSize.width<720 &&
+      
+      <div className="home-container-mobile common">
+    <div className="gif">
+    <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/>
+    </div>
+    <div className="home-heading-mobile home-heading-learn">
+      <div className="home-title mb-32">Learn</div>
+      <div className="home-desc">Welcome to the Learning Hub. Explore the fundamentals of Web4 and the building blocks that make up the Internet of AI. From blockchain basics to AI insights and DePin systems, delve into the transformative world of technology. Let's embark on a journey of discovery together.</div>
+      <div className="button-gap">
+        <div className="home-button button1">Blockchain & AI Basics</div>
+        <div className="home-button button2">Web4</div>
+        <div className="home-button button2">DePin Basics</div>
+        <div className="home-button button1">GPT Protocol</div>
+        <div className="home-button button2">Technical Insights</div>
+        <div className="home-button button2">Videos</div>
+      </div>
+    </div>
+    
+    <div className="blur-div"></div>
+    </div>}
+    {screenSize.width===0?
+      <Loader/>:screenSize.width>720 &&
+      <div className="home-container common">
     <div className="gif">
     <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/>
     </div>
@@ -46,10 +91,10 @@ export default function Learn() {
     </div>
     
     <div className="blur-div"></div>
-    
-    
-    </div>
-    <div className="experiment" style={{padding:"0 100px"}}>
+    </div>}
+
+    <div className="experiment">
+      <div className="tem-default temp-20">
       <div className="justify-center text-40 mb-60">Blockchain & AI Basics</div>
       <div className='flex content-between'>
         <div className='left-b'>
@@ -129,7 +174,7 @@ export default function Learn() {
       <div className="text-20 mb-32 wc lh-40">Smart Cities<span className="text-20n lc">: Integrated management of city services, from traffic control to waste management, enhancing urban living.</span></div>
 
       <div className="justify-center text-40 mb-60 mt-120">GPT Protocol</div>
-      <div className="text-20n">GPT Protocol emerges as a transformative Layer 2 blockchain platform built on the Ethereum Virtual Machine (EVM), aimed at revolutionizing the artificial intelligence (AI) landscape. It integrates the power of decentralized technologies to ensure that AI development is accessible, innovative, and censorship-resistant. This platform harnesses the full potential of open-source AI tools and decentralized networks, bringing together a global community of developers to create, share, and deploy AI applications directly on the blockchain.</div>
+      <div className="text-20n lh-40">GPT Protocol emerges as a transformative Layer 2 blockchain platform built on the Ethereum Virtual Machine (EVM), aimed at revolutionizing the artificial intelligence (AI) landscape. It integrates the power of decentralized technologies to ensure that AI development is accessible, innovative, and censorship-resistant. This platform harnesses the full potential of open-source AI tools and decentralized networks, bringing together a global community of developers to create, share, and deploy AI applications directly on the blockchain.</div>
 
       <div className="text-32 lh-70 mt-60">Key Features</div>
       <div className="text-20 mb-32 wc lh-40">Censorship-Resistant<span className="text-20n lc">: Ensures open access to information, challenging centralized control.</span></div>
@@ -147,9 +192,13 @@ export default function Learn() {
       
 
 
-      <div></div>
+      <div className="justify-center text-40 mb-60 mt-120">Technical Insights</div>
+      <div className="flex content-between align start arch">
+      <div className="text-32 lh-70 wc">Architecture Diagram</div>
+      <div><Image src={Arch} width={832} height={480} /></div>
+      </div>
 
-      <div className="text-32 lh-70 mt-60">Our System</div>
+      <div className="text-32 lh-70 wc mt-60">Our System</div>
       <div className="text-24 lh-40 mt-32">Proof of Resources</div>
       <div className="text-20n lh-40">"Proof of Resources" is a validation protocol that not only quantifies the computational assets of operators and workers in AI mining but also verifies the completion and accuracy of AI processing tasks within a decentralized grid computing system. This ensures the integrity and efficiency of the network by confirming both the availability of necessary resources and the successful execution of assigned tasks.</div>
 
@@ -201,16 +250,17 @@ export default function Learn() {
       <div className="justify-center text-40 mb-60 mt-120">Videos</div>
       <div className="flex justify-center">
       <div className="video-gap">
-        <div className="flex gap-54">
+        <div className="flex gap-54 v1">
         <div><iframe src="https://player.vimeo.com/video/942736354?h=7c99f38588&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
         <div><iframe src="https://player.vimeo.com/video/942736452?h=552642b9b2&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
         </div>
-        <div className="flex gap-54">
+        <div className="flex gap-54 v1">
         <div><iframe src="https://player.vimeo.com/video/942736493?h=eaf371e5b4&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
         <div><iframe src="https://player.vimeo.com/video/942736958?h=7445fb533a&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
         </div>
       </div>
       </div>
+    </div>
     </div>
     </div>
   );

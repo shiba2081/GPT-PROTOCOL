@@ -26,3 +26,13 @@
         background: rgba(255,255,255,0.1);
     }
 }
+
+@media screen and (max-width: 720px) {
+    .card-extra {
+        padding: 32px 26px 0 26px;
+        .card-extra-desc {
+            font-size: 14px !important;
+            margin-bottom: 30px !important;
+        }
+    }
+}

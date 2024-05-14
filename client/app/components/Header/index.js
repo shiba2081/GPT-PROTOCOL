@@ -70,9 +70,9 @@ export default function Header() {
 
   return (
     <div className='header'>
-        <div onClick={()=> navigateTo('/')} style={{cursor:"pointer"}}
+        <div onClick={()=> navigateTo('/')} style={{cursor:"pointer",position:"relative",zIndex:"101"}}
         onMouseEnter={()=> setIsHovered(true)}
-        onMouseLeave={()=> setIsHovered(false)}><Icon name='header' fill={isHovered? "#83ff31":"#fff"} width={74} height={24} /></div>
+        onMouseLeave={()=> setIsHovered(false)}>{screenSize.width>720? <Icon name='header' fill={isHovered? "#83ff31":"#fff"} width={74} height={25} />:<Icon name='header-mobile' fill={isHovered? "#83ff31":"#fff"} width={43} height={14} />}</div>
         { screenSize.width<720 ?
         <motion.div
         initial={false}
@@ -80,38 +80,43 @@ export default function Header() {
         className="menu"
         >
         <div
-        style={{cursor:"pointer"}}
+        
+        className='cancel'
         // whileTap={{ scale: 0.97 }}
         // onClick={() => setIsOpen(!isOpen)}
         >
         <svg
-          viewBox="0 0 50 50"
-          width="50"
-          height="50"
+          viewBox="0 0 18 15"
+          width="18"
+          height="15"
           xmlns="http://www.w3.org/2000/svg"
+          style={{cursor:"pointer"}}
           onClick={toggleMenu}
         >
           {/* Menu icon paths */}
-          <path d="M10 15H40" stroke="white" strokeWidth="3" style={{ opacity: isOpen ? '0' : '1' }}/>
-          <path d="M10 25H40" stroke="white" strokeWidth="3" style={{ opacity: isOpen ? '0' : '1' }}/>
+          <path d="M1 1.25H17" stroke="white" strokeWidth="1.5" stroke-linecap="round" style={{ opacity: isOpen ? '0' : '1' }}/>
+          <path d="M1 7.25H17" stroke="white" strokeWidth="1.5" stroke-linecap="round" style={{ transition: 'all 0.2s ease', opacity: isOpen ? '0' : '1' }}/>
           <path
-            d="M10 35H40"
+            d="M1 13.25H17"
             stroke="white"
-            strokeWidth="3"
-            style={{ transition: 'all 0.3s ease', opacity: isOpen ? '0' : '1' }}
+            strokeWidth="1.5"
+            stroke-linecap="round"
+            style={{ opacity: isOpen ? '0' : '1' }}
           />
 
           {/* Cross icon paths (hidden initially) */}
           <path
-            d="M10 15L40 35"
+            d="M3.34326 1.34277L14.657 12.6565"
             stroke="white"
-            strokeWidth="3"
+            strokeWidth="1.5"
+            stroke-linecap="round"
             style={{ opacity: isOpen ? '1' : '0' }}
           />
           <path
-            d="M10 35L40 15"
+            d="M3.34326 12.6572L14.657 1.34352"
             stroke="white"
-            strokeWidth="3"
+            strokeWidth="1.5"
+            stroke-linecap="round"
             style={{ opacity: isOpen ? '1' : '0' }}
           />
         </svg>
@@ -162,7 +167,7 @@ export default function Header() {
         <div className='ask'>Ask GPT</div>
         </>
         }
-        <div className='scroll-top' style={{cursor:"pointer"}}
+        <div className='scroll-top' style={{cursor:"pointer", top:`${screenSize.height-74}px`}}
         onClick={()=>scrollToTop()}
         onMouseEnter={()=> setIsHovered1(true)}
         onMouseLeave={()=> setIsHovered1(false)}><Icon name='up-arrow' fill={isHovered1? "#fff":"#83ff31"} width={24} height={24} /></div>

@@ -4,6 +4,9 @@ import Hero from '../assets/img/hero1.gif'
 import Hero2 from '../assets/img/hero2.png'
 import Hero3 from '../assets/img/hero3.gif'
 
+import Hero_Mobile from '../assets/img/hero_mobile.gif'
+
+
 
 import { useEffect, useState } from "react";
 import '@/app/styles/index.scss'
@@ -14,12 +17,15 @@ import TemS from "@/app/components/TemS";
 import TemT from "@/app/components/TemT";
 import Slider from "@/app/components/Slider";
 import dynamic from 'next/dynamic';
-import { motion, useMotionValue, useTransform, spring, useAnimation  } from "framer-motion";
+import { motion, useAnimation  } from "framer-motion";
 import SliderF from "../components/SliderF";
 import CardT from "../components/CardT";
+import Loader from "../components/Loader";
 
 
 const Icon = dynamic(()=> import('../components/Icons'))
+
+
 
 export default function Home() {
   const controls = useAnimation();
@@ -60,9 +66,12 @@ export default function Home() {
     {image:"Slider3",desc:'Buy, Stake & Earn More'}]
   
   useEffect(()=> {
+    setTimeout(() => {
+      
+    }, 500);
     setTimeout(()=>{
       setGif1(true)
-    },1830)
+    },2230)
     setTimeout(()=> {
       setGif1(false)
       setGif2(true)
@@ -70,8 +79,8 @@ export default function Home() {
   },[])
   
   const [screenSize, setScreenSize] = useState({
-    width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+    width: typeof window !== 'undefined'? window.innerWidth:0,
+    height: typeof window !== 'undefined'? window.innerHeight:0,
   });
 
   useEffect(() => {
@@ -102,9 +111,9 @@ export default function Home() {
 // }
   return (
     <div style={{position:"relative"}}>
-    <div 
-    // data-scroll data-scroll-speed="-.8" 
-    className="home-container">
+
+    
+    
     {/* <div className={`hero1 ${gif2? "motion":"no-motion"}`}>
 
     </div>
@@ -116,7 +125,57 @@ export default function Home() {
         <div className="hero2"></div>
         <div className="hero3"></div>
     </div> */}
-    {screenSize.width>720 ? 
+    {/* {screenSize.width<720 && 
+      <div 
+    // data-scroll data-scroll-speed="-.8" 
+    className="home-container-mobile">
+    <>
+    <div className="gif">
+      <Image src={Hero_Mobile} width={430} height={764} style={{mixBlendMode: "screen"}}/>
+    </div>
+    <div className="blur-div"></div>
+    <div className={`home-heading-mobile`}>
+      <div className="home-title mb-80">Censorship-Resistant Intelligence</div>
+      <div className="home-desc">Connecting AI developers and miners through Proof of Resources.</div>
+      <div className="button-gap">
+        <div className="home-button button1">Start Mining </div>
+        <div className="home-button button2">Start Building </div>
+      </div>
+    </div>
+    
+    
+    </>
+    </div>
+    } */}
+    {/* <Loader/> */}
+    {screenSize.width===0?
+      <Loader/>:screenSize.width<720 &&
+      
+    <div 
+    // data-scroll data-scroll-speed="-.8" 
+    className="home-container-mobile">
+    <>
+    <div className="gif">
+      <Image src={Hero_Mobile} width={430} height={764} style={{mixBlendMode: "screen"}}/>
+    </div>
+    <div className="blur-div"></div>
+    <div className={`home-heading-mobile`}>
+      <div className="home-title mb-80">Censorship-Resistant Intelligence</div>
+      <div className="home-desc">Connecting AI developers and miners through Proof of Resources.</div>
+      <div className="button-gap">
+        <div className="home-button button1">Start Mining </div>
+        <div className="home-button button2">Start Building </div>
+      </div>
+    </div>
+    
+    
+    </>
+    </div>}
+    {screenSize.width===0?
+      <Loader/>:screenSize.width>720 &&
+      <div 
+    // data-scroll data-scroll-speed="-.8" 
+    className="home-container">
     <>
     <div className="gif">
       {gif1? <Image priority={true} src={Hero2} width={1440} height={810} style={{mixBlendMode: "screen"}}/>:gif2? <Image src={Hero3} width={1440} height={810} style={{mixBlendMode: "screen"}}/>:<Image priority={true} src={Hero} width={1440} height={810} style={{mixBlendMode: "screen"}}/>}
@@ -131,26 +190,8 @@ export default function Home() {
     </div>
     
     <div className="blur-div"></div>
-    </>:
-    <>
-    <div className="gif">
-      <Image src={Hero3} width={720} height={405} style={{mixBlendMode: "screen"}}/>
-    </div>
-    <div className="blur-div"></div>
-    <div className={`home-heading`}>
-      <div className="home-title mb-80">Censorship-Resistant Intelligence</div>
-      <div className="home-desc">Connecting AI developers and miners through Proof of Resources.</div>
-      <div className="button-gap">
-        <div className="home-button button1">Start Mining <Icon name='arrow-left' fill='#CAFEAE' width={24} height={24} /></div>
-        <div className="home-button button2">Start Building <Icon name='arrow-left' fill='#fff' width={24} height={24} /></div>
-      </div>
-    </div>
-    
-    
     </>
-    }
-    
-    </div>
+    </div>}
     
     {/* <Marque/> */}
     <div className="experiment">
@@ -190,6 +231,7 @@ export default function Home() {
     </motion.div>} */}
     
     </div>
+    <div className="background1">
     <div className="temp1 card-first">
     <motion.div
       initial={{ opacity: 0 }}
@@ -203,9 +245,10 @@ export default function Home() {
     <div className="temp1">
       <Slider images={images} child={"second"} width={screenSize.width}/>
     </div>
+    </div>
     <div 
     // data-scroll data-scroll-speed="-.4" 
-    className="temp1 mt-160 mb-80">
+    className="temp1 mt-160 mb-80 background2">
     {/* <div className="hero-shape">
         <div className="hero1"></div>
         <div className="hero2"></div>
@@ -225,7 +268,7 @@ export default function Home() {
         
         <TemS/>
     </div>
-    <div className="card-third plr-100">
+    <div className="card-third">
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

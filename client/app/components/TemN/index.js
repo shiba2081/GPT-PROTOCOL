@@ -23,7 +23,7 @@ export default function TemN({child}) {
     <>
     {child==="first"?
     <div className='TemN'>
-        <div className='flex gap-20'>
+        <div className='flex gap-20 flexn'>
         <div className='left'>
             <CardBig child={child}/>
         </div>
@@ -35,7 +35,7 @@ export default function TemN({child}) {
         </div>
     </div>:
     <div className='TemN' >
-        <div className='flex gap-20'>
+        <div className='flex gap-20 flexn'>
         <div className='right'>
             {cardList1.map((item)=> {
                 return <CardN item={item}/>

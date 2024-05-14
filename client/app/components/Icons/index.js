@@ -5,17 +5,23 @@ import Network3 from '@/app/assets/svgs/Home/network3.svg'
 import RightArrow from '@/app/assets/svgs/Home/rightArrow.svg'
 import LeftArrow from '@/app/assets/svgs/Home/leftArrow.svg'
 import ArrowLeft from '@/app/assets/svgs/Home/arrowLeft.svg'
+import ArrowRight from '@/app/assets/svgs/Home/arrowRight.svg'
 
 import Discord from '@/app/assets/svgs/footer/discord.svg'
 import Telegram from '@/app/assets/svgs/footer/telegram.svg'
 import Instagram from '@/app/assets/svgs/footer/instagram.svg'
 import X from '@/app/assets/svgs/footer/x.svg'
+import Copied from '@/app/assets/svgs/footer/copied.svg'
+import MCopied from '@/app/assets/svgs/footer/m_copied.svg'
+
 import FooterLogo from '@/app/assets/svgs/footer/footerLogo.svg'
 import HeaderLogo from '@/app/assets/svgs/header/header.svg'
+import HeaderLogoMobile from '@/app/assets/svgs/header/header-mobile.svg'
 
 import UpArrow from '@/app/assets/svgs/header/up-arrow.svg'
 
 import Spiral from '@/app/assets/svgs/Build/spiral.svg'
+import Pline from '@/app/assets/svgs/Build/pline.svg'
 
 import Gov1 from '@/app/assets/svgs/Network/gov1.svg'
 import Gov2 from '@/app/assets/svgs/Network/gov2.svg'
@@ -51,8 +57,12 @@ const Icon = (props) => {
                     <FooterLogo fill={fill} width={width} height={height} />
                 ):name === 'header'? (
                     <HeaderLogo fill={fill} width={width} height={height} />
+                ):name === 'header-mobile'? (
+                    <HeaderLogoMobile fill={fill} width={width} height={height} />
                 ):name === 'spiral'? (
                     <Spiral fill={fill} width={width} height={height} />
+                ):name === 'pline'? (
+                    <Pline fill={fill} width={width} height={height} />
                 ):name === 'right-arrow'? (
                     <RightArrow fill={fill} width={width} height={height} />
                 ):name === 'left-arrow'? (
@@ -75,8 +85,14 @@ const Icon = (props) => {
                     <Sec4 fill={fill} width={width} height={height} />
                 ):name === 'arrow-left'? (
                     <ArrowLeft fill={fill} width={width} height={height} />
+                ):name === 'arrow-right'? (
+                    <ArrowRight fill={fill} width={width} height={height} />
                 ):name === 'up-arrow'? (
                     <UpArrow fill={fill} width={width} height={height} />
+                ):name === 'copied'? (
+                    <Copied fill={fill} width={width} height={height} />
+                ):name === 'mcopied'? (
+                    <MCopied fill={fill} width={width} height={height} />
                 ):
                 
                 null

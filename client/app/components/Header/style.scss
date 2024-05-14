@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10000;
+    z-index: 100;
     background: rgba(0,0,0,0.2);
     backdrop-filter: blur(20px);
     height: 70px;
@@ -30,7 +30,9 @@
       }
       
       li {
-        display: block;
+        display: flex;
+        justify-content: center;
+        
       }
       
       ul,
@@ -40,16 +42,18 @@
         padding: 10px;
       }
       ul {
+        width: 100%;
+        top: 33px;
         position: absolute;
-        z-index: 100000;
+        z-index: 100;
         display: flex;
         flex-direction: column;
         gap: 10px;
-        background: radial-gradient(farthest-corner at 100px 500px, #324B19 0, #0B0C0B 52%, #000 100%);
+        // background: radial-gradient(farthest-corner at 100px 500px, #324B19 0, #0B0C0B 52%, #000 100%);
+        background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(14, 22, 6, 0.9));
         // background: rgba(0,0,0,0.2);
         backdrop-filter: blur(20px);
-        right: 10%;
-        text-align: end;
+        text-align: center;
       }
     .ask {
         display: flex;
@@ -75,7 +79,6 @@
 }
 .scroll-top {
     position: absolute;
-    top: 724px;
     right: 30px;
     height: 54px;
     width: 54px;
@@ -92,5 +95,19 @@
 @media screen and (max-width: 720px) {
     .header {
         padding: 0 30px;
+        height: 60px !important;
+        backdrop-filter: blur(10px) !important; 
+
+        .cancel {
+            display: flex;
+            justify-content: end;
+        }
+
+        .menu {
+            position: absolute !important;
+            width: 87% !important;
+            touch-action: manipulation;
+        }
+
     }
 }

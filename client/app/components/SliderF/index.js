@@ -31,10 +31,10 @@ export default function SliderF(props) {
             slides: {perView:1.2, spacing:20}
           },
         "(min-width: 720px)": {
-          slides: {perView:2.2, spacing:20}
+          slides: {perView:3.2, spacing:20}
         },
         "(min-width: 1280px)": {
-            slides: {perView:3.2, spacing:20}
+            slides: {perView:4, spacing:20}
         },
         "(min-width: 1440px)": {
             slides: {perView:4, spacing:20}

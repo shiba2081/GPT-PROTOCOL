@@ -54,23 +54,39 @@
   }
 
   @media screen and (max-width: 720px) {
+    .slider-wrapper {
+      position: relative !important;
+      justify-content: flex-start !important;
+    }
+    .left-arrow {
+      position: absolute !important;
+      z-index: 1 !important;
+      padding-top: 7px !important;
+    }
+    .right-arrow {
+      position: absolute !important;
+      right: 0 !important;
+    }
     .fader {
       background: #100f12 !important;
       .src-desc {
+        height: 130px !important;
         top: 230px !important;
         padding: 0 20px !important;
+        flex-direction: column !important;
       }
     }
     .fader__slide {
       height: 50% !important;
       
       .desc {
+        width: 316px !important;
         font-size: 16px !important;
       }
       .learn {
         font-size: 12px !important;
         height: 42px !important;
-        width: 200px !important;
+        width: 122px !important;
       }
     }
   }

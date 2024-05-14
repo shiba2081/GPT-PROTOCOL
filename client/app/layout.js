@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
 
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning="true">
     <head>
     <title>GPT PROTOCOL</title>
     <meta name="description" content="hello" />
@@ -26,8 +26,10 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
       <div className="data-scroll-container">
       <Header/>
+      <div className="delay-scroll">
       {children}
       <Footer/>
+      </div>
       </div>
       </body>
     </html>

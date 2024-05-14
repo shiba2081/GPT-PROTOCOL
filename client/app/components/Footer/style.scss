@@ -19,6 +19,7 @@
         color: #CAFEAE;
     }
     .link-li {
+        position: relative;
         font-size: 20px;
         color: #fff;
         margin-top: 24px;
@@ -46,6 +47,14 @@
 .justify-center {
     display: flex;
     justify-content: center;
+}
+.copy {
+    position: absolute;
+    top: -50px;
+}
+.mcopy {
+    position: absolute;
+    top: -30px;
 }
 
 @media screen and (max-width: 720px) {

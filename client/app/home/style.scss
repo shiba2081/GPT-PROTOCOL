@@ -111,59 +111,45 @@
     margin-bottom: 132px;
  }
 
- @media screen and (max-width: 720px) {
-    .card-first {
-        // .slider-wrapper {
-        //     .fader img {
-        //         width: 162px !important;
-        //         object-fit: contain !important;
-        //         position: relative !important;
-        //     }
-        // }
-    }
-    .cardS-section {
-        gap: 10px !important;
-    }
-   
-    .cardS-flex {
-        gap: 10px !important;
-    }
-    .cardS {
-        height: 200px !important;
+ .loader {
+    position: fixed;
+    top: 0;
+    background: #070707;
+    backdrop-filter: blur(20px);
+    z-index: 1000000;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        .card-detail {
-            padding: 0 16px !important;
-            .cards-title {
-                font-size: 26px !important;
-            }
-            .cards-desc {
-                font-size: 14px !important;
-            }
-        }
-    }
-    .gif {
-        position: absolute;
-        top: 12%;
-        img {
-        }
-    }
-    .home-heading {
-        top: 60% !important;
-        left: 10% !important;
-        // transform: translate(-50%, -50%) !important;
-        width: 400px !important;
+    .loader-container {
+        position: relative;
 
-        .home-title {
-            font-size: 32px !important;
-            margin-bottom: 50px !important;
+        .loader-animation {
+            width: 0;
+            height: 153px;
+            position: absolute;
+            background: chartreuse;
+            animation: increaseWidth 0.7s linear infinite;
         }
-        .home-desc {
-            width: 300px !important;
-            font-size: 16px !important;
+        .loader-image {
+            position: relative;
+            z-index: 10;
         }
     }
-    .home-button {
-        font-size: 14px !important;
-        height: 34px !important;
+}
+
+@keyframes increaseWidth {
+    0% {
+      width: 0; /* Starting width */
     }
- }
+    100% {
+      width: 300px; /* Final width */
+    }
+  }
+
+ 
+
+

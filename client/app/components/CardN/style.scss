@@ -1,6 +1,6 @@
 .cardN {
     position: relative;
-    width: 100%;
+    width: 48%;
     height: 295px;
     // padding-bottom: 60px;
     padding: 72px 16px 40px 16px;
@@ -22,5 +22,16 @@
     box-shadow: 0 20px 50px 10px rgba(0, 0, 0, 1);
     .cardn-desc {
         color: #FFFFFF;
+    }
+}
+
+@media screen and (max-width: 720px) { 
+    .cardN {
+        height: 180px !important;
+        padding: 22px 16px 22px 16px !important;
+        .cardn-desc {
+            font-size: 12px !important;
+        }
+
     }
 }

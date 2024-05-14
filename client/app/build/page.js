@@ -5,6 +5,9 @@ import '@/app/styles/index.scss'
 import './style.scss'
 import TemB from "../components/TemB";
 import BigCard from "../components/BigCard";
+import { useEffect, useState } from "react";
+import Loader from "../components/Loader";
+import BigCard2 from "../components/BigCard2";
 
 export default function Build() {
   const cardsList1 = [
@@ -73,9 +76,77 @@ export default function Build() {
     {id:2,title:"AI Training",
     description:["Help train AI models and strengthen the protocol's intelligence. (Coming Soon)"]},
   ]
+  const cardsList9 = [
+    {id:1,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"41px"},
+    {id:2,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"128px"},
+    {id:3,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"215px"},
+    {id:1,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"301px"},
+    {id:2,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"387px"},
+    {id:3,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"472px"},
+  ]
+  const cardsList10 = [
+    {id:1,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"41px"},
+    {id:2,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"128px"},
+    {id:3,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"215px"},
+    {id:1,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"301px"},
+    {id:2,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"387px"},
+    {id:3,title:"Heading Title",
+    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"472px"},
+  ]
+
+  const [screenSize, setScreenSize] = useState({
+    width: typeof window !== 'undefined'? window.innerWidth:0,
+    height: typeof window !== 'undefined'? window.innerHeight:0,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
   return (
     <div style={{position:"relative"}}>
-    <div className="home-container common">
+    {screenSize.width===0?
+      <Loader/>:screenSize.width<720 &&
+      
+      <div className="home-container-mobile common">
+    <div className="gif">
+    <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/>
+    </div>
+    <div className="home-heading-mobile">
+      <div className="home-title mb-32">Build</div>
+      <div className="home-desc">Find essential resources like API documentation, Github repositories, and tools for both Testnet and Mainnet. Dive into our project showcase, participate in the Bounty Program, and access comprehensive support for development issues to advance your development projects on our decentralized AI platform.</div>
+      {/* <div className="button-gap">
+        <div className="home-button button1">Blockchain & AI Basics</div>
+        <div className="home-button button2">Start Building</div>
+      </div> */}
+    </div>
+    
+    <div className="blur-div"></div>
+    
+    
+    </div>}
+    {screenSize.width===0?
+      <Loader/>:screenSize.width>720 &&
+      <div className="home-container common">
     <div className="gif">
     <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/>
     </div>
@@ -91,30 +162,34 @@ export default function Build() {
     <div className="blur-div"></div>
     
     
-    </div>
+    </div>}
     <div className="experiment">
-    <div className="justify-center text-40 mb-62">Developer Tools</div>
+    
     <div className="tempb">
+    <div className="justify-center text-40 mb-62">Developer Tools</div>
       <TemB cardsList={cardsList1}/>
     </div>
-    <div className="justify-center text-40 mb-62 mt-120">Support Channels</div>
+    
     <div className="tempb">
+    <div className="justify-center text-40 mb-62 mt-120">Support Channels</div>
       <TemB cardsList={cardsList2} animation="no"/>
     </div>
-    <div className="justify-center text-40 mb-62 mt-120">Our Products</div>
     <div className="tempb">
+    <div className="justify-center text-40 mb-62 mt-120">Our Products</div>
       <TemB cardsList={cardsList3}/>
     </div>
-    <div className="justify-center text-40 mb-62 mt-120">Technical Roadmap</div>
+    
     <div className="tempb">
-      <BigCard cardsList={cardsList4} cardsList1={cardsList5} heading={"2024 (Q1-Q4)"}/>
+    <div className="justify-center text-40 mb-62 mt-120">Technical Roadmap</div>
+      {screenSize.width>720? <BigCard cardsList={cardsList4} cardsList1={cardsList5} heading={"2024 (Q1-Q4)"}/>:<BigCard2 cardsList1={cardsList9} heading={"2024 (Q1-Q4)"}/>}
     </div>
 
     <div className="tempb mt-60">
-      <BigCard cardsList={cardsList6} cardsList1={cardsList7} heading={"2025 (Q1-Q4)"}/>
+    {screenSize.width>720? <BigCard cardsList={cardsList6} cardsList1={cardsList7} heading={"2025 (Q1-Q4)"}/>:<BigCard2 cardsList1={cardsList10} heading={"2025 (Q1-Q4)"}/>}
     </div>
-    <div className="justify-center text-40 mb-62 mt-120">Contribution Guide</div>
+    
     <div className="tempb">
+    <div className="justify-center text-40 mb-62 mt-120">Contribution Guide</div>
       <TemB cardsList={cardsList8} animation="no"/>
     </div>
 

@@ -1,5 +1,5 @@
 .TemF {
-    padding: 40px 80px 40px 100px;
+    padding: 40px 0 40px 0;
     display: flex;
     justify-content: space-between;
     .left {
@@ -53,6 +53,12 @@
             .left-li {
                 font-size: 16px !important;
             }
+            .lefts-head {
+                font-size: 24px !important;
+            }
+            li {
+                font-size: 16px !important;
+            }
         }
         .right {
             text-align: center;
@@ -60,6 +66,11 @@
                 width: 400px;
                 height: 400px;
             }
+        }
+    }
+    .temp-default {
+        .miner {
+            font-size: 16px !important;
         }
     }
 }

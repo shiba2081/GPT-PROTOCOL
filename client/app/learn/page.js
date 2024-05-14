@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import Hero from '@/app/assets/img/Learn/learn1.gif'
-import Arch from '@/app/assets/img/Learn/ARCH_PNG.png'
+import Arch from '@/app/assets/img/Learn/Arch_PNG.png'
 import { useEffect, useState } from "react";
 import '@/app/styles/index.scss'
 import './style.scss'

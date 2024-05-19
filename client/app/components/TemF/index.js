@@ -7,6 +7,14 @@ import { motion } from 'framer-motion';
 const Icon = dynamic(()=> import('../Icons'))
 
 export default function TemF({ch}) {
+
+  const openLink = (label) => {
+    if (label==="developer") {
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLScTQfHHwqTzQT7DjknklaAdkap6txp_NYvsrNhD0uPlptd-Gg/viewform")
+    } else if (label==="partner") {
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLSdMOrYvRd_mqx5Kb0CuKYGWYhjW-2xd_t6uim6bV0R52lSYAg/viewform")
+    }
+  }
   return (
     <>
     {ch === "first" ?
@@ -85,7 +93,7 @@ export default function TemF({ch}) {
             <div className='left-li'>
             Ready to get started in AI and blockchain development? Join our community of developers and start creating trusted applications for the age of automation.
             </div>
-            <div className="home-button button1">Become a Developer</div>
+            <div className="home-button button1 c-p" onClick={()=>{openLink("developer")}}>Become a Developer</div>
             </motion.div>
         <div className='right'><Image src={internet} width={600} height={600} style={{mixBlendMode: "screen"}}/></div>
     </div>:
@@ -104,7 +112,7 @@ export default function TemF({ch}) {
             <div className='left-li'>
             Ready to get started in AI and blockchain development? Join our community of developers and start creating trusted applications for the age of automation.
             </div>
-            <div className="home-button button1">Become a Partner</div>
+            <div className="home-button button1 c-p" onClick={()=>{openLink("partner")}}>Become a Partner</div>
             </motion.div>
         <div className='right'><Image src={mining} width={600} height={600} style={{mixBlendMode: "screen"}}/></div>
     </div>}

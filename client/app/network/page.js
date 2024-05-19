@@ -36,6 +36,12 @@ export default function Network() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const openLink = (label) => {
+    if (label==="join") {
+      window.open("https://discord.com/invite/gptprotocols")
+    }
+  }
+
   return (
     <div style={{position:"relative"}}>
     {screenSize.width===0?
@@ -94,7 +100,7 @@ export default function Network() {
       <div className="card-extra-desc">
       Be part of an AI governance system where your voice matters. Our decision-making process is guided by a community-driven, token-based voting system, ensuring every participant can contribute to the network's evolution and policy-making.
       </div>
-      <div className="home-button button3">Join Now</div>
+      <div className="home-button button3 c-p" onClick={()=>{openLink("join")}}>Join Now</div>
     </div>
     </div>
     

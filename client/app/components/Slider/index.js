@@ -20,6 +20,16 @@ export default function Slider(props) {
     const [loaded, setLoaded] = useState(false)
     const [opacities, setOpacities] = useState([])
 
+    const openLink = (label) => {
+      if (label===1) {
+        window.open("https://x.com/craigosullivan/status/1770500267412164720?s=46")
+      } else if (label===2) {
+        window.open("https://x.com/gpt_protocol/status/1772709282317754506?s=46")
+      } else if (label===2) {
+        window.open("https://staking.gptprotocol.org/")
+      }
+    }
+
     const [sliderRef, instanceRef] = useKeenSlider({
         initial: 0,
         slideChanged(slider) {
@@ -67,7 +77,7 @@ export default function Slider(props) {
             className="fader__slide src-desc"
             style={{ opacity: opacities[idx] }}>
             <div className="desc">{src.desc}</div>
-            <div className="learn">Learn More<Icon name='arrow-left' fill='#000' width={24} height={24} /></div></div>
+            <div className="learn c-p" onClick={()=>openLink(idx)}>Learn More<Icon name='arrow-left' fill='#000' width={24} height={24} /></div></div>
           </div>
         ))
         }

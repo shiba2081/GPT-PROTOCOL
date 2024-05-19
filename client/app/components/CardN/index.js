@@ -25,7 +25,7 @@ export default function CardN(props) {
     }
   }
   return (
-    <div className='card-default cardN'
+    <div className='card-default cardN c-p'
     onMouseEnter={()=> setIsHovered(true)}
     onMouseLeave={()=> setIsHovered(false)}
     onClick={()=>openLink(props?.item?.label)}>

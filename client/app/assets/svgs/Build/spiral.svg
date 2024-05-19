@@ -1,35 +1,32 @@
-<svg width="204" height="1238" viewBox="0 0 204 1238" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_120_1183)">
-<path d="M47.999 350C47.999 440.505 155.999 433.058 155.999 527C155.999 620.942 47.999 601.466 47.999 704" stroke="#DDFFCB" stroke-width="2"/>
-<path d="M47.999 704C47.999 794.505 155.999 787.058 155.999 881C155.999 974.942 47.999 955.466 47.999 1058" stroke="#DDFFCB" stroke-width="2"/>
-<path d="M47.999 -2.99997C47.999 87.2492 155.999 79.8236 155.999 173.5C155.999 267.176 47.999 247.756 47.999 350" stroke="#DDFFCB" stroke-width="2"/>
-<path d="M48 1058C48 1148.25 156 1140.82 156 1234.5C156 1328.18 48 1308.76 48 1411" stroke="white" stroke-width="2"/>
-<circle cx="156" cy="174" r="5" transform="rotate(90 156 174)" fill="white"/>
-<circle cx="48" cy="350" r="5" transform="rotate(90 48 350)" fill="white"/>
-<circle cx="156" cy="527" r="5" transform="rotate(90 156 527)" fill="white"/>
-<circle cx="48" cy="704" r="5" transform="rotate(90 48 704)" fill="white"/>
-<circle cx="156" cy="881" r="5" transform="rotate(90 156 881)" fill="white"/>
-<circle cx="48" cy="1058" r="5" transform="rotate(90 48 1058)" fill="white"/>
-<rect x="162" width="297" height="120" transform="rotate(90 162 0)" fill="url(#paint0_linear_120_1183)"/>
-<rect x="43" y="1238" width="297" height="120" transform="rotate(-90 43 1238)" fill="url(#paint1_linear_120_1183)"/>
-</g>
+<svg width="204" height="1058" viewBox="0 0 204 1058" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_363_950)">
+<path d="M48.999 350C48.999 440.505 156.999 433.058 156.999 527C156.999 620.942 48.999 601.466 48.999 704" stroke="#DDFFCB" stroke-width="2"/>
+<path d="M48.999 704C48.999 794.505 156.999 787.058 156.999 881C156.999 974.942 48.999 955.466 48.999 1058" stroke="#DDFFCB" stroke-width="2"/>
+<path d="M48.999 -2.99997C48.999 87.2492 156.999 79.8236 156.999 173.5C156.999 267.176 48.999 247.756 48.999 350" stroke="#DDFFCB" stroke-width="2"/>
+<rect x="204" width="297" height="202" transform="rotate(90 204 0)" fill="url(#paint0_linear_363_950)"/>
+<rect x="4" y="1058" width="297" height="200" transform="rotate(-90 4 1058)" fill="url(#paint1_linear_363_950)"/>
+<circle cx="157" cy="174" r="5" transform="rotate(90 157 174)" fill="white"/>
+<circle cx="48.9998" cy="350" r="5" transform="rotate(90 48.9998 350)" fill="white"/>
+<circle cx="157" cy="527" r="5" transform="rotate(90 157 527)" fill="white"/>
+<circle cx="48.9998" cy="704" r="5" transform="rotate(90 48.9998 704)" fill="white"/>
+<circle cx="157" cy="881" r="5" transform="rotate(90 157 881)" fill="white"/>
 <path d="M44 350L0 350" stroke="#DDFFCB"/>
 <path d="M44 703L0 703" stroke="#DDFFCB"/>
-<path d="M44 1057L0 1057" stroke="#DDFFCB"/>
 <path d="M204 174L160 174" stroke="#DDFFCB"/>
 <path d="M204 527L160 527" stroke="#DDFFCB"/>
 <path d="M204 881L160 881" stroke="#DDFFCB"/>
+</g>
 <defs>
-<linearGradient id="paint0_linear_120_1183" x1="162" y1="60" x2="459" y2="60" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_363_950" x1="204" y1="101" x2="501" y2="101" gradientUnits="userSpaceOnUse">
 <stop stop-color="#131412"/>
 <stop offset="1" stop-color="#131412" stop-opacity="0"/>
 </linearGradient>
-<linearGradient id="paint1_linear_120_1183" x1="43" y1="1298" x2="340" y2="1298" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear_363_950" x1="4" y1="1158" x2="301" y2="1158" gradientUnits="userSpaceOnUse">
 <stop stop-color="#090A09"/>
 <stop offset="1" stop-color="#0B0B0A" stop-opacity="0"/>
 </linearGradient>
-<clipPath id="clip0_120_1183">
-<rect width="1238" height="118" fill="white" transform="translate(161) rotate(90)"/>
+<clipPath id="clip0_363_950">
+<rect width="1058" height="204" fill="white" transform="translate(204) rotate(90)"/>
 </clipPath>
 </defs>
 </svg>

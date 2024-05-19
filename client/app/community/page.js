@@ -103,10 +103,12 @@ export default function Community() {
       <div className="justify-center text-40 mb-62 mt-120">Buy $GPT</div>
       <div className="card-second cardC-buy">
         <div
+        style={{cursor:"pointer"}}
         onClick={()=>openLink("uniSwap")}
         onMouseEnter={()=> setIsHovered(true)}
         onMouseLeave={()=> setIsHovered(false)}>{isHovered?<Image src={Horse1} width={160} height={160}/>:<Image src={Horse} width={160} height={160}/>}</div>
         <div
+        style={{cursor:"pointer"}}
         onClick={()=>openLink("mexc")}
         onMouseEnter={()=> setIsHovered1(true)}
         onMouseLeave={()=> setIsHovered1(false)}>{isHovered1?<Image src={Global1} width={160} height={160}/>:<Image src={Global} width={160} height={160}/>}</div>

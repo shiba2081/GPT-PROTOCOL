@@ -1,8 +1,7 @@
 'use client'
 import Image from "next/image";
 import Hero from '../assets/img/hero1.gif'
-import Hero2 from '../assets/img/hero2.png'
-import Hero3 from '../assets/img/hero3.gif'
+import Hero2 from '../assets/img/hero2.gif'
 
 import Hero_Mobile from '../assets/img/hero_mobile.gif'
 
@@ -31,7 +30,7 @@ export default function Home() {
   const controls = useAnimation();
   const [point, setPoint] = useState({ x: 436, y: 242 });
   const [gif1, setGif1] = useState(false)
-  const [gif2, setGif2] = useState(false)
+  
   const cardList = [
     {
       img:"card1",
@@ -61,23 +60,24 @@ export default function Home() {
     {id:4,title:"Community",description:"Connect, collaborate, and share knowledge with peers."},
   ]
   const images = [
-    {image:"Slider1",desc:'Exciting news! "GPT_protocol" joins NVIDIA Developer Program, enhancing our AI tools for users.'},
+    {image:"Slider1",desc:'Exciting news! "GPT Protocol" joins NVIDIA Developer Program, enhancing our AI tools for users.'},
     {image:"Slider2",desc:'Navigating Regulatory Challenges in DePin Innovation'},
     {image:"Slider3",desc:'Buy, Stake & Earn More'}]
   
   useEffect(()=> {
-    setTimeout(() => {
-      
-    }, 500);
     setTimeout(()=>{
       setGif1(true)
-    },2230)
-    setTimeout(()=> {
-      setGif1(false)
-      setGif2(true)
-    },3230)
+    },3000)
   },[])
   
+  const openLink = (label) => {
+    if (label==="mining") {
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLScfDTx7vwM0bLt-w40hDowXu8CEoVqO3bYPlzMXbyIg8hPt1A/viewform?usp=pp_url")
+    }
+    else if (label==="building") {
+      window.open("/build")
+    }
+  }
   const [screenSize, setScreenSize] = useState({
     width: typeof window !== 'undefined'? window.innerWidth:0,
     height: typeof window !== 'undefined'? window.innerHeight:0,
@@ -153,19 +153,21 @@ export default function Home() {
       
     <div 
     // data-scroll data-scroll-speed="-.8" 
-    className="home-container-mobile">
+    className="home-container-mobile1">
     <>
     <div className="gif">
       <Image src={Hero_Mobile} width={430} height={764} style={{mixBlendMode: "screen"}}/>
     </div>
-    <div className="blur-div"></div>
-    <div className={`home-heading-mobile`}>
+    <div className="blur-div1"></div>
+    <div className="heading-home">
+    <div className={`home-heading-mobile1`}>
       <div className="home-title mb-80">Censorship-Resistant Intelligence</div>
       <div className="home-desc">Connecting AI developers and miners through Proof of Resources.</div>
       <div className="button-gap">
-        <div className="home-button button1">Start Mining </div>
-        <div className="home-button button2">Start Building </div>
+        <div className="home-button button1 c-p" onClick={()=>openLink("mining")}>Start Mining </div>
+        <div className="home-button button2 c-p" onClick={()=>openLink("building")}>Start Building </div>
       </div>
+    </div>
     </div>
     
     
@@ -178,14 +180,14 @@ export default function Home() {
     className="home-container">
     <>
     <div className="gif">
-      {gif1? <Image priority={true} src={Hero2} width={1440} height={810} style={{mixBlendMode: "screen"}}/>:gif2? <Image src={Hero3} width={1440} height={810} style={{mixBlendMode: "screen"}}/>:<Image priority={true} src={Hero} width={1440} height={810} style={{mixBlendMode: "screen"}}/>}
+      {gif1? <Image priority={true} src={Hero2} width={1440} height={810} style={{mixBlendMode: "screen"}}/>:<Image src={Hero} width={1440} height={810} style={{mixBlendMode: "screen"}}/>}
     </div>
-    <div className={`home-heading ${gif2? "motion":"no-motion"}`}>
+    <div className={`home-heading ${gif1? "motion":"no-motion"}`}>
       <div className="home-title mb-80">Censorship-Resistant Intelligence</div>
       <div className="home-desc">Connecting AI developers and miners through Proof of Resources.</div>
       <div className="button-gap">
-        <div className="home-button button1">Start Mining <Icon name='arrow-left' fill='#CAFEAE' width={24} height={24} /></div>
-        <div className="home-button button2">Start Building <Icon name='arrow-left' fill='#fff' width={24} height={24} /></div>
+        <div className="home-button button1 c-p" onClick={()=>openLink("mining")}>Start Mining <Icon name='arrow-left' fill='#CAFEAE' width={24} height={24} /></div>
+        <div className="home-button button2 c-p" onClick={()=>openLink("building")}>Start Building <Icon name='arrow-left' fill='#fff' width={24} height={24} /></div>
       </div>
     </div>
     

@@ -54,7 +54,31 @@ export default function Footer() {
           window.open("https://x.com/gpt_protocol")
         } else if (label==="Instagram") {
             window.open("https://www.instagram.com/gptprotocol/")
-          }
+        } else if (label==="Whitepaper") {
+          window.open('/GPT-Protocol-Whitepaper-v2.0.pdf','_blank')
+        } else if (label==="Learn") {
+          window.open("/learn", "_self")
+        } else if (label==="Build") {
+          window.open("/build", "_self")
+        } else if (label==="Github") {
+          window.open("https://github.com/gptprotocol")
+        } else if (label==="Community") {
+          window.open("/community", "_self")
+        } else if (label==="Home") {
+          window.open("/", "_self")
+        } else if (label==="Solution") {
+          window.open("/solution", "_self")
+        } else if (label==="Network") {
+          window.open("/network", "_self")
+        } else if (label==="Community") {
+          window.open("/community", "_self")
+        } else if (label==="Documentation") {
+          window.open("	https://github.com/gptprotocol")
+        } else if (label==="Github") {
+          window.open("https://github.com/gptprotocol")
+        } else if (label==="Get Support") {
+          window.open("https://t.me/gpt_protocol")
+        }
         // setCopy(false)
       }
       const [screenSize, setScreenSize] = useState({
@@ -83,12 +107,12 @@ export default function Footer() {
             <div>
                 <div className='link-title'>Pages</div>
                 {Pages.map((item)=> 
-                <div className='link-li c-p'>{item}</div>)}
+                <div className='link-li c-p' onClick={()=>openLink(item)}>{item}</div>)}
             </div>
             <div>
                 <div className='link-title'>Resources</div>
                 {Resources.map((item)=> 
-                <div className='link-li c-p'>{item}</div>)}
+                <div className='link-li c-p' onClick={()=>openLink(item)}>{item}</div>)}
             </div>
             <div>
                 <div className='link-title'>Links</div>

@@ -21,6 +21,12 @@ export default function Header() {
     setIsOpen(false)
     router.push("/"+nav)
   }
+
+  const openLink = (label) => {
+    if (label==="ask") {
+      window.open("https://assistant.gphelpers.com/")
+    }
+  }
   const whitepaper = () => {
     window.open('/GPT-Protocol-Whitepaper-v2.0.pdf','_blank')
   }
@@ -150,7 +156,7 @@ export default function Header() {
           <motion.li variants={itemVariants} className={`nav ${tab==='network' && "active"}`} onClick={()=> navigateTo('network')}>Network</motion.li>
           <motion.li variants={itemVariants} className={`nav ${tab==='community' && "active"}`} onClick={()=> navigateTo('community')}>Community</motion.li>
           <motion.li variants={itemVariants} className='nav' onClick={()=> whitepaper()}>Whitepaper</motion.li>
-          <motion.li variants={itemVariants} ><div className='ask'>Ask GPT</div></motion.li>
+          <motion.li variants={itemVariants} onClick={()=>openLink("ask")}><div className='ask c-p'>Ask GPT</div></motion.li>
           </motion.ul>
           
         </motion.div>
@@ -164,7 +170,7 @@ export default function Header() {
             <div className={`nav ${tab==='community' && "active"}`} onClick={()=> navigateTo('community')}>Community</div>
             <div className='nav' onClick={()=> whitepaper()}>Whitepaper</div>
         </div>
-        <div className='ask'>Ask GPT</div>
+        <div className='ask c-p' onClick={()=>openLink("ask")}>Ask GPT</div>
         </>
         }
         <div className='scroll-top' style={{cursor:"pointer", top:`${screenSize.height-74}px`}}

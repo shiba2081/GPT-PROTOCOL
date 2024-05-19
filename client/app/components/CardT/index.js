@@ -13,14 +13,14 @@ export default function CardT(props) {
     } else if (label==="Build") {
       window.open("/build", "_self")
     } else if (label==="Github") {
-      window.open("https://x.com/gpt_protocol")
+      window.open("https://github.com/gptprotocol")
     } else if (label==="Community") {
       window.open("/community", "_self")
     }
   }
 
   return (
-    <div className='card-default cardT' onClick={()=>openLink(props?.title)}>
+    <div className='card-default cardT c-p' onClick={()=>openLink(props?.title)}>
     <div className='card-gif'>
     <Image src={props.id===1 ? res1:props.id===2? res2:props.id===3? res3:res4} width={180} height={180} style={{mixBlendMode: "screen"}}/>
     </div>

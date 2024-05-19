@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import '@/app/styles/index.scss'
 import './style.scss'
 import Loader from "../components/Loader";
+import { Link } from "react-scroll";
 
 export default function Learn() {
   const cardList = [
@@ -81,12 +82,12 @@ export default function Learn() {
       <div className="home-title mb-32">Learn</div>
       <div className="home-desc">Welcome to the Learning Hub. Explore the fundamentals of Web4 and the building blocks that make up the Internet of AI. From blockchain basics to AI insights and DePin systems, delve into the transformative world of technology. Let's embark on a journey of discovery together.</div>
       <div className="button-gap">
-        <div className="home-button button1">Blockchain & AI Basics</div>
-        <div className="home-button button2">Web4</div>
-        <div className="home-button button2">DePin Basics</div>
-        <div className="home-button button1">GPT Protocol</div>
-        <div className="home-button button2">Technical Insights</div>
-        <div className="home-button button2">Videos</div>
+        <Link to="section1" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">Blockchain & AI Basics</div></Link>
+        <Link to="section2" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">Web4</div></Link>
+        <Link to="section3" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">DePin Basics</div></Link>
+        <Link to="section4" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">GPT Protocol</div></Link>
+        <Link to="section5" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">Technical Insights</div></Link>
+        <Link to="section6" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">Videos</div></Link>
       </div>
     </div>
     
@@ -95,7 +96,7 @@ export default function Learn() {
 
     <div className="experiment">
       <div className="tem-default temp-20">
-      <div className="justify-center text-40 mb-60">Blockchain & AI Basics</div>
+      <div id="section1" className="justify-center text-40 mb-60">Blockchain & AI Basics</div>
       <div className='flex content-between'>
         <div className='left-b'>
           <div className="text-32 lh-70">Blockchain Basics</div>
@@ -114,7 +115,7 @@ export default function Learn() {
           }
         </div>
       </div>
-      <div className="justify-center text-40 mb-60 mt-120">What is Web4?</div>
+      <div id="section2" className="justify-center text-40 mb-60 mt-120">What is Web4?</div>
       <div className="text-20n lh-40">Web4, often known as the 'Internet of AI', marks the evolution of the web into a decentralized, intelligent platform where blockchain, artificial intelligence, and peer-to-peer technologies converge to enhance user autonomy and create a tailored digital experience. In this fourth generation of the web, decentralized applications (dApps) operate on blockchain networks, enabling users to engage with content and services directly, without relinquishing control of their personal data. This new web paradigm champions interoperability, AI-driven personalization, and immersive virtual environments, setting the stage for a user-centric and privacy-preserving digital future.</div>
       <div className=''>
       <div className="text-32 lh-70 mt-60">Benefits</div>
@@ -137,7 +138,7 @@ export default function Learn() {
         </div>
         </div>
       </div>
-      <div className="justify-center text-40 mb-60 mt-120">DePin Basics</div>
+      <div id="section3" className="justify-center text-40 mb-60 mt-120">DePin Basics</div>
       <div className="text-20n lh-40">DePin, short for Decentralized Physical Infrastructure Network, stands as a cornerstone for the emerging Web4 ecosystem, providing a robust, censorship-resistant foundation that is crucial for the autonomous and intelligent web of the future. Built upon the principles of decentralization, DePin leverages distributed networks of physical servers, storage, and connectivity solutions that are not confined to any central authority or location.</div>
 
 
@@ -173,7 +174,7 @@ export default function Learn() {
       <div className="text-20 mb-32 wc lh-40">Supply Chain<span className="text-20n lc">: Transparent tracking of goods from production to delivery, ensuring authenticity and compliance.</span></div>
       <div className="text-20 mb-32 wc lh-40">Smart Cities<span className="text-20n lc">: Integrated management of city services, from traffic control to waste management, enhancing urban living.</span></div>
 
-      <div className="justify-center text-40 mb-60 mt-120">GPT Protocol</div>
+      <div id="section4" className="justify-center text-40 mb-60 mt-120">GPT Protocol</div>
       <div className="text-20n lh-40">GPT Protocol emerges as a transformative Layer 2 blockchain platform built on the Ethereum Virtual Machine (EVM), aimed at revolutionizing the artificial intelligence (AI) landscape. It integrates the power of decentralized technologies to ensure that AI development is accessible, innovative, and censorship-resistant. This platform harnesses the full potential of open-source AI tools and decentralized networks, bringing together a global community of developers to create, share, and deploy AI applications directly on the blockchain.</div>
 
       <div className="text-32 lh-70 mt-60">Key Features</div>
@@ -192,7 +193,7 @@ export default function Learn() {
       
 
 
-      <div className="justify-center text-40 mb-60 mt-120">Technical Insights</div>
+      <div id="section5" className="justify-center text-40 mb-60 mt-120">Technical Insights</div>
       <div className="flex content-between align start arch">
       <div className="text-32 lh-70 wc">Architecture Diagram</div>
       <div><Image src={Arch} width={832} height={480} /></div>
@@ -247,16 +248,16 @@ export default function Learn() {
       <div className="text-24 lh-40 mt-32">Dashboard</div>
       <div className="text-20n lh-40">   A "Dashboard" in this network context is a web-based interface that utilizes Grafana and Prometheus for initial data visualization and monitoring. It is designed to aggregate and display logs from all operators, providing end users with a centralized platform to oversee and manage the network's performance, resource utilization, and operational metrics. This dashboard is a critical tool for administrators and users to maintain oversight of the network, ensuring effective management of both operators and workers.</div>
 
-      <div className="justify-center text-40 mb-60 mt-120">Videos</div>
+      <div id="section6" className="justify-center text-40 mb-60 mt-120">Videos</div>
       <div className="flex justify-center">
       <div className="video-gap">
         <div className="flex gap-54 v1">
-        <div><iframe src="https://player.vimeo.com/video/942736354?h=7c99f38588&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-        <div><iframe src="https://player.vimeo.com/video/942736452?h=552642b9b2&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+        <div className="v-border"><iframe src="https://player.vimeo.com/video/942736354?h=7c99f38588&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+        <div className="v-border"><iframe src="https://player.vimeo.com/video/942736452?h=552642b9b2&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
         </div>
         <div className="flex gap-54 v1">
-        <div><iframe src="https://player.vimeo.com/video/942736493?h=eaf371e5b4&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-        <div><iframe src="https://player.vimeo.com/video/942736958?h=7445fb533a&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+        <div className="v-border"><iframe src="https://player.vimeo.com/video/942736493?h=eaf371e5b4&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+        <div className="v-border"><iframe src="https://player.vimeo.com/video/942736958?h=7445fb533a&title=0&byline=0&portrait=0" width="640" height="640" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
         </div>
       </div>
       </div>

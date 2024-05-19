@@ -33,23 +33,21 @@ export default function Build() {
     description:["Dashboard","Reward System","More..."]},
   ]
   const cardsList4 = [
-    {id:1,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",
-    top:"332px"},
-    {id:2,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",
-    top:"685px"},
-    {id:3,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",
-    top:"1038px"},
+    {id:1,title:"Q1+2 - MVP of GPT Genesis 3D",
+    description:"Demonstrate text-to-3D generation of on-chain digital artifacts.",top:"332px"},
+    {id:2,title:"Q3 - Launch of Mainnet + Initial DePin Testnet",
+    description:"Enable AI projects and tokens to launch on our blockchain.",top:"685px"},
   ]
   const cardsList5 = [
-    {id:1,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"160px"},
-    {id:2,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"513px"},
-    {id:3,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"866px"},
+    {id:1,title:"Q1 - MVP of GPT Assistant",
+    description:"Demonstrate on-chain and token-gated generative AI use cases.",
+    top:"160px"},
+    {id:2,title:"Q2 - Launch of Skopje Testnet + GPT Assistant v1.0 Alpha",
+    description:"Release consumer-ready decentralized application (DApp), pioneering the integration of open-source AI applications with transparent data display.",
+    top:"513px"},
+    {id:3,title:"Q4 - Launch of Mining",
+    description:"Fully operational grid computing with operators and workers on our AI + DePin network.",
+    top:"867px"},
   ]
   const cardsList6 = [
     {id:1,title:"Heading Title",
@@ -77,18 +75,19 @@ export default function Build() {
     description:["Help train AI models and strengthen the protocol's intelligence. (Coming Soon)"]},
   ]
   const cardsList9 = [
-    {id:1,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"41px"},
-    {id:2,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"128px"},
-    {id:3,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"215px"},
-    {id:1,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"301px"},
-    {id:2,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"387px"},
-    {id:3,title:"Heading Title",
-    description:"Sub Title fot Join Discord For Example text are System Requirements",top:"472px"},
+    {id:1,title:"Q1 - MVP of GPT Assistant",
+    description:"Demonstrate on-chain and token-gated generative AI use cases.",
+    top:"43px"},
+    {id:2,title:"Q1+2 - MVP of GPT Genesis 3D",
+    description:"Demonstrate text-to-3D generation of on-chain digital artifacts.",top:"132px"},
+    {id:3,title:"Q2 - Launch of Skopje Testnet + GPT Assistant v1.0 Alpha",
+    description:"Release consumer-ready decentralized application (DApp), pioneering the integration of open-source AI applications with transparent data display.",
+    top:"218px"},
+    {id:4,title:"Q3 - Launch of Mainnet + Initial DePin Testnet",
+    description:"Enable AI projects and tokens to launch on our blockchain.",top:"364px"},
+    {id:5,title:"Q4 - Launch of Mining",
+    description:"Fully operational grid computing with operators and workers on our AI + DePin network.",
+    top:"457px"},
   ]
   const cardsList10 = [
     {id:1,title:"Heading Title",
@@ -184,9 +183,9 @@ export default function Build() {
       {screenSize.width>720? <BigCard cardsList={cardsList4} cardsList1={cardsList5} heading={"2024 (Q1-Q4)"}/>:<BigCard2 cardsList1={cardsList9} heading={"2024 (Q1-Q4)"}/>}
     </div>
 
-    <div className="tempb mt-60">
+    {/* <div className="tempb mt-60">
     {screenSize.width>720? <BigCard cardsList={cardsList6} cardsList1={cardsList7} heading={"2025 (Q1-Q4)"}/>:<BigCard2 cardsList1={cardsList10} heading={"2025 (Q1-Q4)"}/>}
-    </div>
+    </div> */}
     
     <div className="tempb">
     <div className="justify-center text-40 mb-62 mt-120">Contribution Guide</div>

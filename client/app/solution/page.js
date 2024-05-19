@@ -14,6 +14,12 @@ export default function Solution() {
     height: typeof window !== 'undefined'? window.innerHeight:0,
   });
 
+  const openLink = (label) => {
+    if (label==="miner") {
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLScTQfHHwqTzQT7DjknklaAdkap6txp_NYvsrNhD0uPlptd-Gg/viewform")
+    }
+  }
+
   useEffect(() => {
     function handleResize() {
       setScreenSize({
@@ -74,7 +80,7 @@ export default function Solution() {
         <TemF ch="third"/>
         <div className="temp-default">
         <div className="miner" style={{fontSize:"24px",color:"#E3E3E3",marginBottom:"40px"}}>Join our miner community and turn your computational resources into rewards. Stake tokens, contribute to AI processing, and become a vital part of a pioneering decentralized network. Start mining today and be at the forefront of blockchain and AI innovation. </div>
-        <div className="home-button button1">Become a Miner</div>
+        <div className="home-button button1 c-p" onClick={()=>{openLink("miner")}}>Become a Miner</div>
         </div>
       </div>
       

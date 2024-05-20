@@ -67,7 +67,7 @@ export default function Home() {
   useEffect(()=> {
     setTimeout(()=>{
       setGif1(true)
-    },3000)
+    },4500)
   },[])
   
   const openLink = (label) => {
@@ -180,7 +180,10 @@ export default function Home() {
     className="home-container">
     <>
     <div className="gif">
-      {gif1? <Image priority={true} src={Hero2} width={1440} height={810} style={{mixBlendMode: "screen"}}/>:<Image src={Hero} width={1440} height={810} style={{mixBlendMode: "screen"}}/>}
+    <div style={{position:"relative"}}>
+      {!gif1 && <Image src={Hero} width={1440} height={810} style={{mixBlendMode: "screen",position:"absolute"}}/>}
+      <Image priority={true} src={Hero2} width={1440} height={810} style={{mixBlendMode: "screen",opacity: gif1? "1":"0"}}/>
+      </div>
     </div>
     <div className={`home-heading ${gif1? "motion":"no-motion"}`}>
       <div className="home-title mb-80">Censorship-Resistant Intelligence</div>

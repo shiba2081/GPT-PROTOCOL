@@ -61,12 +61,12 @@ export default function Learn() {
       <div className="home-title mb-32">Learn</div>
       <div className="home-desc">Welcome to the Learning Hub. Explore the fundamentals of Web4 and the building blocks that make up the Internet of AI. From blockchain basics to AI insights and DePin systems, delve into the transformative world of technology. Let's embark on a journey of discovery together.</div>
       <div className="button-gap">
-        <div className="home-button button1">Blockchain & AI Basics</div>
-        <div className="home-button button2">Web4</div>
-        <div className="home-button button2">DePin Basics</div>
-        <div className="home-button button1">GPT Protocol</div>
-        <div className="home-button button2">Technical Insights</div>
-        <div className="home-button button2">Videos</div>
+      <Link to="section1" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">Blockchain & AI Basics</div></Link>
+      <Link to="section2" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">Web4</div></Link>
+      <Link to="section3" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">DePin Basics</div></Link>
+      <Link to="section4" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">GPT Protocol</div></Link>
+      <Link to="section5" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">Technical Insights</div></Link>
+      <Link to="section6" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">Videos</div></Link>
       </div>
     </div>
     

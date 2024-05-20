@@ -25,7 +25,7 @@ const Loader = () => {
     >
       <div className="loader-container">
       <div className="loader-animation"></div>
-      <div className="loader-image"><Image src={Loader_Image} width={300} height={153} /></div>
+      <div className="loader-image"><Image src={Loader_Image} width={200} height={100} /></div>
       </div>
       {/* <motion.div
         style={{ display: 'flex', whiteSpace: 'nowrap', justifyContent:"center",position:"relative" }}

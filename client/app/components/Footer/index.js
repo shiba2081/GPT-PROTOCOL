@@ -1,15 +1,17 @@
-import { motion, spring, useAnimation } from 'framer-motion';
+
 import './style.scss'
 import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from "react";
 const Icon = dynamic(()=> import('../Icons'))
 // "M 10 100 Q 250 100 490 100"
 export default function Footer() {
+  // const controls = useAnimation();
     const ref = useRef(null);
     const Pages = ["Home","Learn","Build","Solution","Network","Community"]
     const Resources = ["Documentation","Github","Get Support"]
     const Links = ["Whitepaper","Tokenomics","Contract Address","Buy $GPT","Stake $GPT"]
     const [copy, setCopy] = useState(false)
+    // const [point, setPoint] = useState({ x: 436, y: 242 });
     
     // const {x,y} = useFollowPointer(ref)
     // const [isHovered, setIsHovered] = useState(false)
@@ -97,9 +99,44 @@ export default function Footer() {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
       }, []);
+
+    // const findmypoint = (event) => {
+    //   const rect = event.target.getBoundingClientRect();
+    //   const x = event.clientX - rect.left;
+    //   const y = event.clientY - rect.top;
+    //   setPoint({ x, y });
+    //   console.log(x,y)
+    // }
+    // const backTo = () => {
+    //     const x = 436;
+    //     const y = 242;
+    //     console.log("backto")
+    //     controls.start({ d: `M 10 250 Q ${x} ${y} 980 250`, transition: { type: 'spring', damping: 1, stiffness: 200 } });
+        
+    // }
     
   return (
     <div className='footer-container'>
+    {/* <div 
+    // onHoverStart={(e) => console.log('Hover starts',e)} 
+    className='justify-center' ref={ref} 
+    onMouseEnter={(dets)=> findmypoint(dets)}
+    style={{
+                position: 'relative',
+                width: '100%',
+                height: '500px',
+                backgroundColor: '#070707',
+            }}
+    onMouseMove={(dets)=> findmypoint(dets)}
+    onMouseLeave={()=> backTo()}
+    >
+    <svg width="100%" height="500" xmlns="http://www.w3.org/2000/svg">
+    <motion.path 
+    d={`M 10 250 Q ${point.x} ${point.y} 980 250`}
+    stroke="white" fill="transparent" animate={controls} key={Math.random()+point.x+point.y}/>
+    </svg>
+    
+    </div> */}
     <div className='footer flex'>
         <div className='flex gap-84 footer-content'>
         <div className='m-auto gpt'><Icon name='footer' fill='#fff' width={162} height={52} /></div>

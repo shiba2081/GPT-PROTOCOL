@@ -107,6 +107,11 @@
     }
  }
 
+ .desktop-gif {
+    display: flex;
+    justify-content: end;
+ }
+
  .card-first {
     margin-bottom: 132px;
  }
@@ -150,6 +155,23 @@
     }
   }
 
+  // .desktopVideo {
+  //   display: block;
+  // }
+  
+  // .mobileVideo {
+  //   display: none;
+  // }
+  
+  // @media (max-width: 768px) {
+  //   .desktopVideo {
+  //     display: none;
+  //   }
+  
+  //   .mobileVideo {
+  //     display: block;
+  //   }
+  // }
  
 
 

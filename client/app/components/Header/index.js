@@ -14,6 +14,7 @@ export default function Header() {
   const [isHovered1, setIsHovered1] = useState(false)
   const [tab, setTab] = useState('')
   const [active, setActive] = useState('')
+  const [isVisible, setIsVisible] = useState(false);
 
   const navigateTo = (nav) => {
     localStorage.setItem("nav",nav)
@@ -49,6 +50,14 @@ export default function Header() {
     height: typeof window !== 'undefined' ? window.innerHeight : 0,
   });
 
+  const toggleVisibility = () => {
+    if (window.scrollY > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
   useEffect(() => {
     function handleResize() {
       setScreenSize({
@@ -56,9 +65,12 @@ export default function Header() {
         height: window.innerHeight,
       });
     }
-
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('scroll', toggleVisibility);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', toggleVisibility);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -76,14 +88,20 @@ export default function Header() {
 
   return (
     <div className='header'>
-        <div onClick={()=> navigateTo('/')} style={{cursor:"pointer",position:"relative",zIndex:"101"}}
+        <div 
+        className="desktop" onClick={()=> navigateTo('/')} style={{cursor:"pointer",position:"relative",zIndex:"101"}}
         onMouseEnter={()=> setIsHovered(true)}
-        onMouseLeave={()=> setIsHovered(false)}>{screenSize.width>720? <Icon name='header' fill={isHovered? "#83ff31":"#fff"} width={74} height={25} />:<Icon name='header-mobile' fill={isHovered? "#83ff31":"#fff"} width={43} height={14} />}</div>
-        { screenSize.width<720 ?
+        onMouseLeave={()=> setIsHovered(false)}><Icon name='header' fill={isHovered? "#83ff31":"#fff"} width={74} height={25} /></div>
+        <div
+        className="mobile" onClick={()=> navigateTo('/')} style={{cursor:"pointer",position:"relative",zIndex:"101"}}
+        onMouseEnter={()=> setIsHovered(true)}
+        onMouseLeave={()=> setIsHovered(false)}><Icon name='header-mobile' fill={isHovered? "#83ff31":"#fff"} width={43} height={14} /></div>
+
+        {/* { screenSize.width<720 ? */}
         <motion.div
         initial={false}
         animate={isOpen ? "open" : "closed"}
-        className="menu"
+        className="menu mobile"
         >
         <div
         
@@ -160,8 +178,8 @@ export default function Header() {
           </motion.ul>
           
         </motion.div>
-        :
-        <>
+        {/* : */}
+        <div className='desktop'>
         <div className='navigation'>
             <div className={`nav ${tab==='learn' && "active"}`} onClick={()=> navigateTo('learn')}>Learn</div>
             <div className={`nav ${tab==='build' && "active"}`} onClick={()=> navigateTo('build')}>Build</div>
@@ -170,13 +188,14 @@ export default function Header() {
             <div className={`nav ${tab==='community' && "active"}`} onClick={()=> navigateTo('community')}>Community</div>
             <div className='nav' onClick={()=> whitepaper()}>Whitepaper</div>
         </div>
-        <div className='ask c-p' onClick={()=>openLink("ask")}>Ask GPT</div>
-        </>
-        }
-        <div className='scroll-top' style={{cursor:"pointer", top:`${screenSize.height-74}px`}}
+        
+        </div>
+        <div className='ask c-p desktop' onClick={()=>openLink("ask")}>Ask GPT</div>
+        {/* } */}
+        {screenSize.height!==0 && <div className={`scroll-top ${isVisible? "a-v":"a-n"}`} style={{cursor:"pointer", top:`${screenSize.height-74}px`}}
         onClick={()=>scrollToTop()}
         onMouseEnter={()=> setIsHovered1(true)}
-        onMouseLeave={()=> setIsHovered1(false)}><Icon name='up-arrow' fill={isHovered1? "#fff":"#83ff31"} width={24} height={24} /></div>
+        onMouseLeave={()=> setIsHovered1(false)}><Icon name='up-arrow' fill={isHovered1? "#fff":"#83ff31"} width={24} height={24} /></div>}
     </div>
   );
 }

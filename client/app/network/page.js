@@ -1,6 +1,5 @@
 'use client'
 import Image from "next/image";
-import Hero from '@/app/assets/img/Network/network1.gif'
 import '@/app/styles/index.scss'
 import './style.scss'
 import TemB from "../components/TemB";
@@ -49,7 +48,10 @@ export default function Network() {
       
       <div className="home-container-mobile common">
     <div className="gif">
-    <Image src={Hero} width={400} height={400} style={{mixBlendMode: "lighten"}}/>
+    <video width={400} height={400} style={{mixBlendMode: "lighten"}} autoPlay loop muted playsInline>
+          <source src="/network.mp4" type="video/mp4" />
+    </video>
+    {/* <Image src={Hero} width={400} height={400} style={{mixBlendMode: "lighten"}}/> */}
     </div>
     <div className="home-heading-mobile">
       <div className="home-title mb-32">Network</div>
@@ -68,7 +70,10 @@ export default function Network() {
       <Loader/>:screenSize.width>720 &&
       <div className="home-container common">
     <div className="gif">
-    <Image src={Hero} width={540} height={540} style={{mixBlendMode: "lighten"}}/>
+    <video width={540} height={540} style={{mixBlendMode: "lighten"}} autoPlay loop muted playsInline>
+          <source src="/network.mp4" type="video/mp4" />
+    </video>
+    {/* <Image src={Hero} width={540} height={540} style={{mixBlendMode: "lighten"}}/> */}
     </div>
     <div className="home-heading">
       <div className="home-title mb-32">Network</div>

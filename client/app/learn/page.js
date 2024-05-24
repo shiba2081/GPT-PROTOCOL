@@ -1,6 +1,5 @@
 'use client'
 import Image from "next/image";
-import Hero from '@/app/assets/img/Learn/learn1.gif'
 import Arch from '@/app/assets/img/Learn/Arch_PNG.png'
 import { useEffect, useState } from "react";
 import '@/app/styles/index.scss'
@@ -55,7 +54,9 @@ export default function Learn() {
       
       <div className="home-container-mobile common">
     <div className="gif">
-    <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/>
+    <video width={400} height={400} style={{mixBlendMode: "screen"}} autoPlay loop muted playsInline>
+      <source src="/learn.mp4" type="video/mp4" />
+    </video>
     </div>
     <div className="home-heading-mobile home-heading-learn">
       <div className="home-title mb-32">Learn</div>
@@ -76,7 +77,10 @@ export default function Learn() {
       <Loader/>:screenSize.width>720 &&
       <div className="home-container common">
     <div className="gif">
-    <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/>
+    <video width={540} height={540} style={{mixBlendMode: "screen"}} autoPlay loop muted playsInline>
+          <source src="/learn.mp4" type="video/mp4" />
+    </video>
+    {/* <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading">
       <div className="home-title mb-32">Learn</div>

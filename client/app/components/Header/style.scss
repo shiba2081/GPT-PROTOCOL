@@ -91,6 +91,14 @@
 .scroll-top:hover {
     background: #245a00;
 }
+.a-v {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.a-n {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
 
 @media screen and (max-width: 720px) {
     .header {
@@ -111,3 +119,21 @@
 
     }
 }
+
+.desktop {
+    display: block;
+  }
+  
+  .mobile {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .desktop {
+      display: none !important;
+    }
+  
+    .mobile {
+      display: block !important;
+    }
+  }

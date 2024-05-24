@@ -1,6 +1,5 @@
 'use client'
 import Image from "next/image";
-import Hero from '@/app/assets/img/Community/community1.gif'
 
 import Horse from '@/app/assets/img/Community/horse.png'
 import Horse1 from '@/app/assets/img/Community/horse1.png'
@@ -56,7 +55,10 @@ export default function Community() {
       
       <div className="home-container-mobile common">
     <div className="gif">
-    <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/>
+    <video width={400} height={400} style={{mixBlendMode: "screen"}} autoPlay loop muted playsInline>
+          <source src="/community.mp4" type="video/mp4" />
+    </video>
+    {/* <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading-mobile">
       <div className="home-title mb-32">Community</div>
@@ -75,7 +77,10 @@ export default function Community() {
       <Loader/>:screenSize.width>720 &&
       <div className="home-container common">
     <div className="gif">
-    <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/>
+    <video width={540} height={540} style={{mixBlendMode: "screen"}} autoPlay loop muted playsInline>
+          <source src="/community.mp4" type="video/mp4" />
+    </video>
+    {/* <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading">
       <div className="home-title mb-32">Community</div>

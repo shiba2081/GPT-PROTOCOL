@@ -19,7 +19,7 @@
             height: 100px;
             position: absolute;
             background: chartreuse;
-            animation: increaseWidth 0.7s linear infinite;
+            animation: increaseWidth 0.8s linear infinite;
             animation-delay: 0.5s;
         }
         .loader-image {
@@ -41,7 +41,7 @@
 
     .loader {
         .loader-animation {
-            animation: increaseWidth 0.5s linear infinite;
+            animation: increaseWidth 0.8s linear infinite;
         }
     }
   }

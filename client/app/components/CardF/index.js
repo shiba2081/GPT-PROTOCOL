@@ -1,5 +1,4 @@
 import './style.scss'
-import res1 from "../../assets/img/Home/Resources1.gif"
 import Image from 'next/image';
 
 export default function CardF(props) {

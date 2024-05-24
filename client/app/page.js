@@ -1,5 +1,6 @@
-'use client'
-import Home from "@/app/home";
+
+import dynamic from 'next/dynamic';
+const Home = dynamic(() => import("@/app/home"),{ssr:false});
 
 
 export default function First() {

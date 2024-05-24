@@ -1,6 +1,5 @@
 'use client'
 import Image from "next/image";
-import Hero from '@/app/assets/img/Build/build1.gif'
 import '@/app/styles/index.scss'
 import './style.scss'
 import TemB from "../components/TemB";
@@ -128,7 +127,10 @@ export default function Build() {
       
       <div className="home-container-mobile common">
     <div className="gif">
-    <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/>
+    <video width={400} height={400} style={{mixBlendMode: "screen"}} autoPlay loop muted playsInline>
+          <source src="/build.mp4" type="video/mp4" />
+    </video>
+    {/* <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading-mobile">
       <div className="home-title mb-32">Build</div>
@@ -147,7 +149,10 @@ export default function Build() {
       <Loader/>:screenSize.width>720 &&
       <div className="home-container common">
     <div className="gif">
-    <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/>
+    <video width={540} height={540} style={{mixBlendMode: "screen"}} autoPlay loop muted playsInline>
+          <source src="/build.mp4" type="video/mp4" />
+    </video>
+    {/* <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading">
       <div className="home-title mb-32">Build</div>

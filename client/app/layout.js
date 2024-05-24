@@ -18,8 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning="true">
     <head>
-    <title>GPT PROTOCOL</title>
+    <title>GPT Protocol</title>
     <meta name="description" content="hello" />
+    <link rel="preload" href="/hero1.mp4" as="video" type="video/mp4" />
     <link rel="icon" href='/icon1.ico' sizes="16x16"/>
     </head>
       

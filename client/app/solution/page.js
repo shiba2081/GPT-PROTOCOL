@@ -1,6 +1,5 @@
 'use client'
 import Image from "next/image";
-import Hero from '@/app/assets/img/Solution/solution.gif'
 import { useEffect, useState } from "react";
 import '@/app/styles/index.scss'
 import TemF from "@/app/components/TemF";
@@ -39,7 +38,10 @@ export default function Solution() {
       
       <div className="home-container-mobile common">
     <div className="gif">
-    <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/>
+    <video width={400} height={400} style={{mixBlendMode: "screen"}} autoPlay loop muted playsInline>
+          <source src="/solution.mp4" type="video/mp4" />
+    </video>
+    {/* <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading-mobile">
       <div className="home-title mb-32">Solution</div>
@@ -58,7 +60,10 @@ export default function Solution() {
       <Loader/>:screenSize.width>720 &&
       <div className="home-container common">
     <div className="gif">
-    <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/>
+    <video width={540} height={540} style={{mixBlendMode: "screen"}} autoPlay loop muted playsInline>
+          <source src="/solution.mp4" type="video/mp4" />
+    </video>
+    {/* <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading">
       <div className="home-title mb-32">Solution</div>

@@ -12,7 +12,7 @@ export default function BigCard(props) {
     <motion.div
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className='card-flex'>
+  transition={{ease:[0.76, 0, 0.24, 1],duration: .2}} className='card-flex'>
           <div className='big-card-title'>{props?.heading}</div>
             <div className='card-div1 t-align-end'>
               

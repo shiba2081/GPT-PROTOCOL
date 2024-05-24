@@ -1,13 +1,11 @@
 'use client'
 import Image from "next/image";
-import Hero from '../assets/img/hero1.gif'
-import Hero2 from '../assets/img/hero2.gif'
+// import Hero from '../assets/img/hero1.gif'
+// import Hero2 from '../assets/img/hero2.gif'
 
-import Hero_Mobile from '../assets/img/hero_mobile.gif'
+// import Hero_Mobile from '../assets/img/hero_mobile.gif'
 
-
-
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import '@/app/styles/index.scss'
 import './style.scss'
 import Card from '@/app/components/Card';
@@ -18,7 +16,6 @@ import Slider from "@/app/components/Slider";
 import dynamic from 'next/dynamic';
 import { motion, useAnimation  } from "framer-motion";
 import SliderF from "../components/SliderF";
-import CardT from "../components/CardT";
 import Loader from "../components/Loader";
 
 
@@ -30,6 +27,11 @@ export default function Home() {
   const controls = useAnimation();
   const [point, setPoint] = useState({ x: 436, y: 242 });
   const [gif1, setGif1] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [start, setStart] = useState(false)
+  const [isVideoReady, setIsVideoReady] = useState(false);
+  const videoRef = useRef(null);
+
   
   const cardList = [
     {
@@ -65,6 +67,13 @@ export default function Home() {
     {image:"Slider3",desc:'Buy, Stake & Earn More'}]
   
   useEffect(()=> {
+    // setTimeout(()=>{
+    //   setStart(true)
+    // },400)
+    // setTimeout(()=>{
+    //   setLoading(false)
+    // },1000)
+
     setTimeout(()=>{
       setGif1(true)
     },4500)
@@ -95,6 +104,10 @@ export default function Home() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const handleCanPlayThrough = () => {
+    setIsVideoReady(true);
+    videoRef.current.play();
+  };
 //   const findmypoint = (event) => {
 //     const rect = event.target.getBoundingClientRect();
 //     const x = event.clientX - rect.left;
@@ -153,10 +166,14 @@ export default function Home() {
       
     <div 
     // data-scroll data-scroll-speed="-.8" 
-    className="home-container-mobile1">
+    className="home-container-mobile1 mobileVideo">
     <>
     <div className="gif">
-      <Image src={Hero_Mobile} width={430} height={764} style={{mixBlendMode: "screen"}}/>
+    <video  width={430} height={764} style={{mixBlendMode: "screen"}} ref={videoRef}
+            onCanPlayThrough={handleCanPlayThrough} autoPlay loop muted playsInline>
+          <source src="/hero-mobile.mp4" type="video/mp4" />
+        </video>
+      {/* <Image src={Hero_Mobile} width={430} height={764} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="blur-div1"></div>
     <div className="heading-home">
@@ -172,17 +189,27 @@ export default function Home() {
     
     
     </>
-    </div>}
+    </div>
+    }
+    {!isVideoReady && <Loader/>}
     {screenSize.width===0?
       <Loader/>:screenSize.width>720 &&
       <div 
     // data-scroll data-scroll-speed="-.8" 
-    className="home-container">
+    className="home-container desktopVideo">
     <>
-    <div className="gif">
+    <div className="desktop-gif">
     <div style={{position:"relative"}}>
-      {!gif1 && <Image src={Hero} width={1440} height={810} style={{mixBlendMode: "screen",position:"absolute"}}/>}
-      <Image priority={true} src={Hero2} width={1440} height={810} style={{mixBlendMode: "screen",opacity: gif1? "1":"0"}}/>
+      {!gif1 && 
+        <video  width={1440} height={810} style={{mixBlendMode: "screen",position:"absolute"}} ref={videoRef}
+            onCanPlayThrough={handleCanPlayThrough} autoPlay loop muted playsInline>
+          <source src="/hero1.mp4" type="video/mp4" />
+        </video>
+        }
+        <video  width={1440} height={810} style={{mixBlendMode: "screen",opacity: gif1? "1":"0"}} autoPlay loop muted playsInline>
+          <source src="/hero2.mp4" type="video/mp4" />
+        </video>
+      {/* <Image priority={true} src={Hero2} width={1440} height={810} style={{mixBlendMode: "screen",opacity: gif1? "1":"0"}}/> */}
       </div>
     </div>
     <div className={`home-heading ${gif1? "motion":"no-motion"}`}>
@@ -196,7 +223,8 @@ export default function Home() {
     
     <div className="blur-div"></div>
     </>
-    </div>}
+    </div>
+    }
     
     {/* <Marque/> */}
     <div className="experiment">
@@ -241,7 +269,7 @@ export default function Home() {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ease:[0.76, 0, 0.24, 1],duration: .4}}
+      transition={{ease:[0.76, 0, 0.24, 1],duration: .2}}
       className="justify-center text-36 mb-32 mt-60 t-align-center">Designed for Trusted Automation</motion.div>
     {/* {screenSize.width<720 && */}
           <SliderF images={cardList} child={"first"} width={screenSize.width}/>
@@ -269,7 +297,7 @@ export default function Home() {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className="text-52 mb-60 mt-80">A Scalable and Secure AI Blockchain</motion.div>
+      transition={{ease:[0.76, 0, 0.24, 1],duration: .2}} className="text-52 mb-60 mt-80">A Scalable and Secure AI Blockchain</motion.div>
         
         <TemS/>
     </div>
@@ -277,7 +305,7 @@ export default function Home() {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ease:[0.76, 0, 0.24, 1],duration: .4}} className="text-52 mb-60 mt-292">Resources</motion.div>
+      transition={{ease:[0.76, 0, 0.24, 1],duration: .2}} className="text-52 mb-60 mt-292">Resources</motion.div>
     {screenSize.width>720 ?
     <TemT/>:
     <SliderF images={cardListT} child={"third"} width={screenSize.width}/>

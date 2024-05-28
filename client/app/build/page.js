@@ -133,7 +133,7 @@ export default function Build() {
     {/* <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading-mobile">
-      <div className="home-title mb-32">Build</div>
+      <div className="home-title mb-32 oxygen-text">Build</div>
       <div className="home-desc">Find essential resources like API documentation, Github repositories, and tools for both Testnet and Mainnet. Dive into our project showcase, participate in the Bounty Program, and access comprehensive support for development issues to advance your development projects on our decentralized AI platform.</div>
       {/* <div className="button-gap">
         <div className="home-button button1">Blockchain & AI Basics</div>
@@ -155,7 +155,7 @@ export default function Build() {
     {/* <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading">
-      <div className="home-title mb-32">Build</div>
+      <div className="home-title mb-32 oxygen-text">Build</div>
       <div className="home-desc">Find essential resources like API documentation, Github repositories, and tools for both Testnet and Mainnet. Dive into our project showcase, participate in the Bounty Program, and access comprehensive support for development issues to advance your development projects on our decentralized AI platform.</div>
       {/* <div className="button-gap">
         <div className="home-button button1">Blockchain & AI Basics</div>
@@ -167,7 +167,7 @@ export default function Build() {
     
     
     </div>}
-    <div className="experiment">
+    <div className="experiment jakarta-text">
     
     <div className="tempb">
     <div className="justify-center text-40 mb-62">Developer Tools</div>

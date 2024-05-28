@@ -21,13 +21,14 @@ export default function Slider(props) {
     const [opacities, setOpacities] = useState([])
 
     const openLink = (label) => {
-      if (label===1) {
-        window.open("https://x.com/craigosullivan/status/1770500267412164720?s=46")
-      } else if (label===2) {
-        window.open("https://x.com/gpt_protocol/status/1772709282317754506?s=46")
-      } else if (label===2) {
-        window.open("https://staking.gptprotocol.org/")
-      }
+      window.open(label)
+      // if (label==="Slider1") {
+      //   window.open("https://x.com/craigosullivan/status/1770500267412164720?s=46")
+      // } else if (label==="Slider2") {
+      //   window.open("https://x.com/gpt_protocol/status/1772709282317754506?s=46")
+      // } else if (label==="Slider3") {
+      //   window.open("https://staking.gptprotocol.org/")
+      // }
     }
 
     const [sliderRef, instanceRef] = useKeenSlider({
@@ -61,11 +62,14 @@ export default function Slider(props) {
         )}
         
       <div ref={sliderRef} className="fader"
-      onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.next()
-              }>
+      
+      // onClick={(e) =>
+      //           e.stopPropagation() || instanceRef.current?.next()
+      //         }
+              >
         {images.map((src, idx) => (
-          <div>
+          <div
+          >
           <div
             key={idx}
             className="fader__slide"
@@ -75,9 +79,9 @@ export default function Slider(props) {
           </div>
           <div key={idx}
             className="fader__slide src-desc"
-            style={{ opacity: opacities[idx] }}>
+            style={{ opacity: opacities[idx], zIndex: opacities[idx] }}>
             <div className="desc">{src.desc}</div>
-            <div className="learn c-p" onClick={()=>openLink(idx)}>Learn More<Icon name='arrow-left' fill='#000' width={24} height={24} /></div></div>
+            <div className="learn c-p" onClick={()=>openLink(src.url)}>Learn More<Icon name='arrow-left' fill='#000' width={24} height={24} /></div></div>
           </div>
         ))
         }

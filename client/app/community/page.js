@@ -61,7 +61,7 @@ export default function Community() {
     {/* <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading-mobile">
-      <div className="home-title mb-32">Community</div>
+      <div className="home-title mb-32 oxygen-text">Community</div>
       <div className="home-desc">Delve into real-time statistics, community-driven governance, and security measures designed to uphold network integrity. Participate in our democratic decision-making process through token-based voting and community proposals. Join us in shaping the evolution of our network towards a decentralized future where every voice matters.</div>
       {/* <div className="button-gap">
         <div className="home-button button1">Blockchain & AI Basics</div>
@@ -83,7 +83,7 @@ export default function Community() {
     {/* <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading">
-      <div className="home-title mb-32">Community</div>
+      <div className="home-title mb-32 oxygen-text">Community</div>
       <div className="home-desc">Delve into real-time statistics, community-driven governance, and security measures designed to uphold network integrity. Participate in our democratic decision-making process through token-based voting and community proposals. Join us in shaping the evolution of our network towards a decentralized future where every voice matters.</div>
       {/* <div className="button-gap">
         <div className="home-button button1">Blockchain & AI Basics</div>
@@ -96,7 +96,7 @@ export default function Community() {
     
     </div>}
     
-    <div className="experiment">
+    <div className="experiment jakarta-text">
       <div className="justify-center text-40 mb-62">Join Us</div>
       <div className="card-second cardC">
         {

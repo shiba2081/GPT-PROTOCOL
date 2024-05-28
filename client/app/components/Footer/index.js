@@ -169,6 +169,10 @@ export default function Footer() {
     <div className='copyright'>
     Copyright © 2024 GPT Protocol, All Rights Reserved.
     </div>
+    <div style={{display:"none"}}>
+      <div>DESIGNED BY PANKAJ GUJAR.</div>
+      <div>DEVELOPED BY KULDEEP GUJAR.</div>
+    </div>
     </div>
   );
 }

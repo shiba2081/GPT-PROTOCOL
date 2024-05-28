@@ -14,7 +14,7 @@ import TemS from "@/app/components/TemS";
 import TemT from "@/app/components/TemT";
 import Slider from "@/app/components/Slider";
 import dynamic from 'next/dynamic';
-import { motion, useAnimation  } from "framer-motion";
+import { motion} from "framer-motion";
 import SliderF from "../components/SliderF";
 import Loader from "../components/Loader";
 
@@ -24,7 +24,7 @@ const Icon = dynamic(()=> import('../components/Icons'))
 
 
 export default function Home() {
-  const controls = useAnimation();
+  // const controls = useAnimation();
   const [point, setPoint] = useState({ x: 436, y: 242 });
   const [gif1, setGif1] = useState(false)
   const [loading, setLoading] = useState(true)
@@ -62,21 +62,21 @@ export default function Home() {
     {id:4,title:"Community",description:"Connect, collaborate, and share knowledge with peers."},
   ]
   const images = [
-    {image:"Slider1",desc:'Exciting news! "GPT Protocol" joins NVIDIA Developer Program, enhancing our AI tools for users.'},
-    {image:"Slider2",desc:'Navigating Regulatory Challenges in DePin Innovation'},
-    {image:"Slider3",desc:'Buy, Stake & Earn More'}]
+    {image:"Slider1",desc:'Exciting news! "GPT Protocol" joins NVIDIA Developer Program, enhancing our AI tools for users.',url:"https://x.com/craigosullivan/status/1770500267412164720?s=46"},
+    {image:"Slider2",desc:'Navigating Regulatory Challenges, Empowering DePin Innovation',url:"https://x.com/gpt_protocol/status/1772709282317754506?s=46"},
+    {image:"Slider3",desc:'Stake Your $GPT Today, Earn More with GPT Protocol',url:"https://staking.gptprotocol.org/"}]
   
   useEffect(()=> {
     // setTimeout(()=>{
     //   setStart(true)
     // },400)
-    // setTimeout(()=>{
-    //   setLoading(false)
-    // },1000)
+    setTimeout(()=>{
+      setLoading(false)
+    },1000)
 
     setTimeout(()=>{
       setGif1(true)
-    },4500)
+    },5500)
   },[])
   
   const openLink = (label) => {
@@ -170,7 +170,8 @@ export default function Home() {
     <>
     <div className="gif">
     <video  width={430} height={764} style={{mixBlendMode: "screen"}} ref={videoRef}
-            onCanPlayThrough={handleCanPlayThrough} autoPlay loop muted playsInline>
+            // onCanPlayThrough={handleCanPlayThrough} 
+            autoPlay loop muted playsInline>
           <source src="/hero-mobile.mp4" type="video/mp4" />
         </video>
       {/* <Image src={Hero_Mobile} width={430} height={764} style={{mixBlendMode: "screen"}}/> */}
@@ -178,7 +179,7 @@ export default function Home() {
     <div className="blur-div1"></div>
     <div className="heading-home">
     <div className={`home-heading-mobile1`}>
-      <div className="home-title mb-80">Censorship-Resistant Intelligence</div>
+      <div className="home-title mb-80 oxygen-text">Censorship-Resistant Intelligence</div>
       <div className="home-desc">Connecting AI developers and miners through Proof of Resources.</div>
       <div className="button-gap">
         <div className="home-button button1 c-p" onClick={()=>openLink("mining")}>Start Mining </div>
@@ -191,7 +192,7 @@ export default function Home() {
     </>
     </div>
     }
-    {!isVideoReady && <Loader/>}
+    {loading && <Loader/>}
     {screenSize.width===0?
       <Loader/>:screenSize.width>720 &&
       <div 
@@ -202,7 +203,8 @@ export default function Home() {
     <div style={{position:"relative"}}>
       {!gif1 && 
         <video  width={1440} height={810} style={{mixBlendMode: "screen",position:"absolute"}} ref={videoRef}
-            onCanPlayThrough={handleCanPlayThrough} autoPlay loop muted playsInline>
+            // onCanPlayThrough={handleCanPlayThrough} 
+            autoPlay loop muted playsInline>
           <source src="/hero1.mp4" type="video/mp4" />
         </video>
         }
@@ -213,7 +215,7 @@ export default function Home() {
       </div>
     </div>
     <div className={`home-heading ${gif1? "motion":"no-motion"}`}>
-      <div className="home-title mb-80">Censorship-Resistant Intelligence</div>
+      <div className="home-title mb-80 oxygen-text">Censorship-Resistant Intelligence</div>
       <div className="home-desc">Connecting AI developers and miners through Proof of Resources.</div>
       <div className="button-gap">
         <div className="home-button button1 c-p" onClick={()=>openLink("mining")}>Start Mining <Icon name='arrow-left' fill='#CAFEAE' width={24} height={24} /></div>
@@ -281,7 +283,7 @@ export default function Home() {
     </div>
     <div 
     // data-scroll data-scroll-speed="-.4" 
-    className="temp1 mt-160 mb-80 background2">
+    className="temp1 mt-160 mb-80 background2 jakarta-text">
     {/* <div className="hero-shape">
         <div className="hero1"></div>
         <div className="hero2"></div>
@@ -293,7 +295,7 @@ export default function Home() {
     {/* <div className="temp1">
     <Image src={mining} layout="fill" style={{mixBlendMode: "screen"}}/>
     </div> */}
-    <div className="card-second">
+    <div className="card-second jakarta-text">
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -301,7 +303,7 @@ export default function Home() {
         
         <TemS/>
     </div>
-    <div className="card-third">
+    <div className="card-third jakarta-text">
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

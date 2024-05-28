@@ -1,4 +1,32 @@
+/* global.css */
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-oxygen: 'Oxygen', sans-serif;
+  --font-jakarta: 'Plus_Jakarta_Sans', sans-serif;
+}
 
+body {
+  font-family: var(--font-inter);
+}
+
+.oxygen-text {
+  font-family: var(--font-oxygen);
+}
+.jakarta-text {
+  font-family: var(--font-jakarta);
+}
+
+.weight-300 {
+  font-weight: 300;
+}
+
+.weight-400 {
+  font-weight: 400;
+}
+
+.weight-700 {
+  font-weight: 700;
+}
 
 * {
   box-sizing: border-box;

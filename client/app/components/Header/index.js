@@ -1,6 +1,6 @@
 'use client'
 import './style.scss'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { motion, Variants } from "framer-motion";
@@ -10,6 +10,7 @@ const Icon = dynamic(()=> import('../Icons'))
 
 export default function Header() {
   const router = useRouter()
+  const pathname = usePathname()
   const [isHovered, setIsHovered] = useState(false)
   const [isHovered1, setIsHovered1] = useState(false)
   const [tab, setTab] = useState('')
@@ -17,7 +18,7 @@ export default function Header() {
   const [isVisible, setIsVisible] = useState(false);
 
   const navigateTo = (nav) => {
-    localStorage.setItem("nav",nav)
+    // sessionStorage.setItem("nav",nav)
     setTab(nav)
     setIsOpen(false)
     router.push("/"+nav)
@@ -38,10 +39,15 @@ export default function Header() {
     });
   }
   useEffect(()=> {
-    if(typeof window !== "undefined" ) {
-      setActive(localStorage.getItem("nav"));
-      setTab(localStorage.getItem("nav"));
+    console.log(pathname)
+    if (pathname && pathname !== "/") {
+      setActive(pathname.slice(1,));
+      setTab(pathname.slice(1,));
     }
+    // if(typeof window !== "undefined" ) {
+    //   setActive(sessionStorage.getItem("nav"));
+    //   setTab(sessionStorage.getItem("nav"));
+    // }
     
   },[])
   const [isOpen, setIsOpen] = useState(false);

@@ -1,11 +1,26 @@
 'use client'
-import { Inter } from "next/font/google";
+import { Inter, Oxygen, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useEffect } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter'
+});
+
+const oxygen = Oxygen({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  variable: '--font-oxygen'
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  variable: '--font-jakarta'
+});
+
 
 // export const metadata = {
 //   title: "Create Next App",
@@ -24,7 +39,7 @@ export default function RootLayout({ children }) {
     <link rel="icon" href='/icon1.ico' sizes="16x16"/>
     </head>
       
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${oxygen.variable} ${jakarta.variable}`}>
       <div className="data-scroll-container">
       <Header/>
       <div className="delay-scroll">

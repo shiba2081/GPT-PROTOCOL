@@ -1,6 +1,9 @@
 
 import dynamic from 'next/dynamic';
-const Home = dynamic(() => import("@/app/home"),{ssr:false});
+import Loader from './components/Loader';
+const Home = dynamic(() => import("@/app/home"),{
+  ssr:false,
+  loading: () => <Loader/>});
 
 
 export default function First() {

@@ -17,15 +17,17 @@ export default function TemF({ch}) {
   }
 
   const handleMouseEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
+    console.log("enter")
+    // if (videoRef.current) {
+    //   videoRef.current.pause();
+    // }
   };
 
   const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
+    console.log("leave")
+    // if (videoRef.current) {
+    //   videoRef.current.play();
+    // }
   };
 
   return (
@@ -37,22 +39,22 @@ export default function TemF({ch}) {
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
   transition={{ease:[0.76, 0, 0.24, 1],duration: .3}}
- className='left-head jakarta-text'>We’re Committed to Building the <span>Internet of AI.</span></motion.div>
+ className='left-head '>We’re Committed to Building the <span>Internet of AI.</span></motion.div>
             <motion.div
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
   transition={{ease:[0.76, 0, 0.24, 1],duration: .3}}
- className='left-li jakarta-text'><div><Icon name='net1' fill='#fff' width={32} height={32} /></div><div>Create sovereign AI technology that is truly open and censorship-resistant.</div></motion.div>
+ className='left-li '><div><Icon name='net1' fill='#fff' width={32} height={32} /></div><div>Create sovereign AI technology that is truly open and censorship-resistant.</div></motion.div>
             <motion.div
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
   transition={{ease:[0.76, 0, 0.24, 1],duration: .3}}
- className='left-li jakarta-text'><div><Icon name='net2' fill='#fff' width={32} height={32} /></div><div>Enable transparency of your AI data on-chain in order to participate in federated learning and collective intelligence.</div></motion.div>
+ className='left-li '><div><Icon name='net2' fill='#fff' width={32} height={32} /></div><div>Enable transparency of your AI data on-chain in order to participate in federated learning and collective intelligence.</div></motion.div>
             <motion.div
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
   transition={{ease:[0.76, 0, 0.24, 1],duration: .3}}
- className='left-li jakarta-text'><div><Icon name='net3' fill='#fff' width={32} height={32} /></div><div>Become part of the movement to build a more free and creative “AI Internet”.</div></motion.div>
+ className='left-li '><div><Icon name='net3' fill='#fff' width={32} height={32} /></div><div>Become part of the movement to build a more free and creative “AI Internet”.</div></motion.div>
         </div>
         <div className='right'>
         <video width={600} height={600} style={{mixBlendMode: "screen"}} autoPlay loop muted playsInline
@@ -69,11 +71,11 @@ export default function TemF({ch}) {
     <motion.div
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .3}} className='left-head jakarta-text'>Validating AI Mining with <span>Proof of Resources</span></motion.div>
+  transition={{ease:[0.76, 0, 0.24, 1],duration: .3}} className='left-head '>Validating AI Mining with <span>Proof of Resources</span></motion.div>
         <motion.div
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .3}} className='left-li jakarta-text'><div>Proof of Resources is a validation protocol that not only quantifies the computational assets of operators and workers in AI mining but also verifies the completion and accuracy of AI processing tasks within a decentralized grid computing system. This ensures the integrity and efficiency of the network by confirming both the availability of necessary resources and the successful execution of assigned tasks.</div></motion.div>
+  transition={{ease:[0.76, 0, 0.24, 1],duration: .3}} className='left-li '><div>Proof of Resources is a validation protocol that not only quantifies the computational assets of operators and workers in AI mining but also verifies the completion and accuracy of AI processing tasks within a decentralized grid computing system. This ensures the integrity and efficiency of the network by confirming both the availability of necessary resources and the successful execution of assigned tasks.</div></motion.div>
         
     </div>
     <div className='right'>
@@ -89,13 +91,13 @@ export default function TemF({ch}) {
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
   transition={{ease:[0.76, 0, 0.24, 1],duration: .3}} className='left' >
-            <div className='lefts-head mb-30 jakarta-text'>Benefits</div>
+            <div className='lefts-head mb-30 '>Benefits</div>
             <ul>
               <li>Earn rewards by contributing computational power.</li>
               <li>Participate in a cutting-edge decentralized AI network.</li>
               <li>Gain access to a global community of innovators.</li>
             </ul>
-            <div className='lefts-head mt-60 mb-30 jakarta-text'>Joining Process</div>
+            <div className='lefts-head mt-60 mb-30 '>Joining Process</div>
             <ul>
               <li>Register through the web-based client or CLI.</li>
               <li>Stake the minimum required tokens to create a miner profile.</li>

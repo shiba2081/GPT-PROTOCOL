@@ -44,7 +44,7 @@ export default function Solution() {
     {/* <Image src={Hero} width={400} height={400} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading-mobile">
-      <div className="home-title mb-32 oxygen-text">Solution</div>
+      <div className="home-title mb-32 ">Solution</div>
       <div className="home-desc">Discover how we're shaping the future of decentralized AI through mining opportunities and collaborative partnerships. Join our global miner community, explore collaborative ventures, and embrace decentralized innovation. Let's shape tomorrow together.</div>
       {/* <div className="button-gap">
         <div className="home-button button1">Blockchain & AI Basics</div>
@@ -66,7 +66,7 @@ export default function Solution() {
     {/* <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading">
-      <div className="home-title mb-32 oxygen-text">Solution</div>
+      <div className="home-title mb-32 ">Solution</div>
       <div className="home-desc">Discover how we're shaping the future of decentralized AI through mining opportunities and collaborative partnerships. Join our global miner community, explore collaborative ventures, and embrace decentralized innovation. Let's shape tomorrow together.</div>
       {/* <div className="button-gap">
         <div className="home-button button1">Blockchain & AI Basics</div>
@@ -78,7 +78,7 @@ export default function Solution() {
     
     
     </div>}
-    <div className="experiment jakarta-text">
+    <div className="experiment ">
       
       <div className="temp1">
       <div className="justify-center text-48 mb-62">Miners</div>

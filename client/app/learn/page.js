@@ -59,7 +59,7 @@ export default function Learn() {
     </video>
     </div>
     <div className="home-heading-mobile home-heading-learn">
-      <div className="home-title mb-32 oxygen-text">Learn</div>
+      <div className="home-title mb-32 ">Learn</div>
       <div className="home-desc">Welcome to the Learning Hub. Explore the fundamentals of Web4 and the building blocks that make up the Internet of AI. From blockchain basics to AI insights and DePin systems, delve into the transformative world of technology. Let's embark on a journey of discovery together.</div>
       <div className="button-gap">
       <Link to="section1" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">Blockchain & AI Basics</div></Link>
@@ -83,7 +83,7 @@ export default function Learn() {
     {/* <Image src={Hero} width={540} height={540} style={{mixBlendMode: "screen"}}/> */}
     </div>
     <div className="home-heading">
-      <div className="home-title mb-32 oxygen-text">Learn</div>
+      <div className="home-title mb-32 ">Learn</div>
       <div className="home-desc">Welcome to the Learning Hub. Explore the fundamentals of Web4 and the building blocks that make up the Internet of AI. From blockchain basics to AI insights and DePin systems, delve into the transformative world of technology. Let's embark on a journey of discovery together.</div>
       <div className="button-gap">
         <Link to="section1" smooth={true} duration={500} offset={-100}><div className="home-button button1 c-p">Blockchain & AI Basics</div></Link>
@@ -99,7 +99,7 @@ export default function Learn() {
     </div>}
 
     <div className="experiment">
-      <div className="tem-default temp-20 jakarta-text">
+      <div className="tem-default temp-20 ">
       <div id="section1" className="justify-center text-40 mb-60">Blockchain & AI Basics</div>
       <div className='flex content-between'>
         <div className='left-b'>

@@ -179,7 +179,7 @@ export default function Home() {
     <div className="blur-div1"></div>
     <div className="heading-home">
     <div className={`home-heading-mobile1`}>
-      <div className="home-title mb-80 oxygen-text">Censorship-Resistant Intelligence</div>
+      <div className="home-title mb-80 ">Censorship-Resistant Intelligence</div>
       <div className="home-desc">Connecting AI developers and miners through Proof of Resources.</div>
       <div className="button-gap">
         <div className="home-button button1 c-p" onClick={()=>openLink("mining")}>Start Mining </div>
@@ -215,7 +215,7 @@ export default function Home() {
       </div>
     </div>
     <div className={`home-heading ${gif1? "motion":"no-motion"}`}>
-      <div className="home-title mb-80 oxygen-text">Censorship-Resistant Intelligence</div>
+      <div className="home-title mb-80 ">Censorship-Resistant Intelligence</div>
       <div className="home-desc">Connecting AI developers and miners through Proof of Resources.</div>
       <div className="button-gap">
         <div className="home-button button1 c-p" onClick={()=>openLink("mining")}>Start Mining <Icon name='arrow-left' fill='#CAFEAE' width={24} height={24} /></div>
@@ -283,7 +283,7 @@ export default function Home() {
     </div>
     <div 
     // data-scroll data-scroll-speed="-.4" 
-    className="temp1 mt-160 mb-80 background2 jakarta-text">
+    className="temp1 mt-160 mb-80 background2 ">
     {/* <div className="hero-shape">
         <div className="hero1"></div>
         <div className="hero2"></div>
@@ -295,7 +295,7 @@ export default function Home() {
     {/* <div className="temp1">
     <Image src={mining} layout="fill" style={{mixBlendMode: "screen"}}/>
     </div> */}
-    <div className="card-second jakarta-text">
+    <div className="card-second ">
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -303,7 +303,7 @@ export default function Home() {
         
         <TemS/>
     </div>
-    <div className="card-third jakarta-text">
+    <div className="card-third ">
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

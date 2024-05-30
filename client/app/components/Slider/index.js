@@ -1,7 +1,6 @@
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import "./style.scss"
-import Slider1 from "../../assets/img/Home/News/slider1.gif"
 import Slider2 from "../../assets/img/Home/News/slider2.png"
 import Slider3 from "../../assets/img/Home/News/slider3.png"
 import Image from 'next/image';
@@ -75,13 +74,18 @@ export default function Slider(props) {
             className="fader__slide"
             style={{ opacity: opacities[idx] }}
           >
-            <Image src={src.image==="Slider1"? Slider1:src.image==="Slider2"? Slider2:Slider3} />
+          {src.image==="Slider1"?
+          <video autoPlay loop muted playsInline>
+          <source src="/slider1.mp4" type="video/mp4" />
+        </video>:
+          <Image src={src.image==="Slider2"? Slider2:Slider3} />}
+            
           </div>
           <div key={idx}
             className="fader__slide src-desc"
             style={{ opacity: opacities[idx], zIndex: opacities[idx] }}>
             <div className="desc">{src.desc}</div>
-            <div className="learn c-p" onClick={()=>openLink(src.url)}>Learn More<Icon name='arrow-left' fill='#000' width={24} height={24} /></div></div>
+            <div className="learn c-p" onClick={()=>openLink(src.url)}>Learn More{width>720 ?<Icon name='arrow-left' fill='#000' width={24} height={24} />:<Icon name='arrow-left' fill='#000' width={24} height={24} />}</div></div>
           </div>
         ))
         }

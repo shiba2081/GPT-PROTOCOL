@@ -8,7 +8,7 @@ export default function CardBig({child}) {
         {
           child==="first"?
           <video width={400} height={400} style={{mixBlendMode: "lighten"}} autoPlay loop muted playsInline>
-          <source src="/internetai.mp4" type="video/mp4" />
+          <source src="/foundation.mp4" type="video/mp4" />
         </video>:
           <Image src={Security} width={400} height={400} />
         }

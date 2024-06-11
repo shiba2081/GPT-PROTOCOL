@@ -28,6 +28,9 @@ export default function Header() {
     if (label==="ask") {
       window.open("https://assistant.gphelpers.com/")
     }
+    else if (label==="buy") {
+      navigateTo('community?buy=gpt')
+    }
   }
   const whitepaper = () => {
     window.open('/GPT-Protocol-Whitepaper-v2.0.pdf','_blank')
@@ -50,6 +53,37 @@ export default function Header() {
     // }
     
   },[])
+  const [scrollDirection, setScrollDirection] = useState(null);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection('down');
+      } else {
+        setScrollDirection('up');
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    if (scrollDirection === 'down') {
+      setHidden(true);
+    } else if (scrollDirection === 'up') {
+      setHidden(false);
+    }
+  }, [scrollDirection]);
+
   const [isOpen, setIsOpen] = useState(false);
   const [screenSize, setScreenSize] = useState({
     width: typeof window !== 'undefined' ? window.innerWidth : 0,
@@ -93,11 +127,7 @@ export default function Header() {
   };
 
   return (
-    <div className='header'>
-        <div 
-        className="desktop" onClick={()=> navigateTo('/')} style={{cursor:"pointer",position:"relative",zIndex:"101"}}
-        onMouseEnter={()=> setIsHovered(true)}
-        onMouseLeave={()=> setIsHovered(false)}><Icon name='header' fill={isHovered? "#83ff31":"#fff"} width={74} height={25} /></div>
+    <div className={`header ${hidden? "hidden":""}`}>
         <div
         className="mobile" onClick={()=> navigateTo('/')} style={{cursor:"pointer",position:"relative",zIndex:"101"}}
         onMouseEnter={()=> setIsHovered(true)}
@@ -180,10 +210,17 @@ export default function Header() {
           <motion.li variants={itemVariants} className={`nav ${tab==='network' && "active"}`} onClick={()=> navigateTo('network')}>Network</motion.li>
           <motion.li variants={itemVariants} className={`nav ${tab==='community' && "active"}`} onClick={()=> navigateTo('community')}>Community</motion.li>
           <motion.li variants={itemVariants} className='nav' onClick={()=> whitepaper()}>Whitepaper</motion.li>
+          <motion.li variants={itemVariants} onClick={()=>openLink("buy")}><div className='ask c-p'>Buy $GPT</div></motion.li>
           <motion.li variants={itemVariants} onClick={()=>openLink("ask")}><div className='ask c-p'>Ask GPT</div></motion.li>
           </motion.ul>
           
         </motion.div>
+        <div className='flex gap-56'>
+        <div 
+        className="desktop" onClick={()=> navigateTo('/')} style={{cursor:"pointer",position:"relative",zIndex:"101"}}
+        onMouseEnter={()=> setIsHovered(true)}
+        onMouseLeave={()=> setIsHovered(false)}><Icon name='header' fill={isHovered? "#83ff31":"#fff"} width={74} height={25} /></div>
+        
         {/* : */}
         <div className='desktop'>
         <div className='navigation'>
@@ -196,7 +233,11 @@ export default function Header() {
         </div>
         
         </div>
+        </div>
+        <div className='flex gap-16'>
+        <div className='ask c-p desktop' onClick={()=>openLink("buy")}>Buy $GPT</div>
         <div className='ask c-p desktop' onClick={()=>openLink("ask")}>Ask GPT</div>
+        </div>
         {/* } */}
         {screenSize.height!==0 && <div className={`scroll-top ${isVisible? "a-v":"a-n"}`} style={{cursor:"pointer", top:`${screenSize.height-74}px`}}
         onClick={()=>scrollToTop()}

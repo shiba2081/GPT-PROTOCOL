@@ -14,7 +14,7 @@ import TemS from "@/app/components/TemS";
 import TemT from "@/app/components/TemT";
 import Slider from "@/app/components/Slider";
 import dynamic from 'next/dynamic';
-import { motion} from "framer-motion";
+import { motion, useInView} from "framer-motion";
 import SliderF from "../components/SliderF";
 import Loader from "../components/Loader";
 
@@ -31,6 +31,8 @@ export default function Home() {
   const [start, setStart] = useState(false)
   const [isVideoReady, setIsVideoReady] = useState(false);
   const videoRef = useRef(null);
+  const cardref = useRef(null);
+  const inview = useInView(cardref, {once:true})
 
   
   const cardList = [
@@ -272,9 +274,9 @@ export default function Home() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ease:[0.76, 0, 0.24, 1],duration: .2}}
-      className="justify-center text-36 mb-32 mt-60 t-align-center">Designed for Trusted Automation</motion.div>
+      className="justify-center text-36 mb-32 mt-60 t-align-center" ref = {cardref}>Designed for Trusted Automation</motion.div>
     {/* {screenSize.width<720 && */}
-          <SliderF images={cardList} child={"first"} width={screenSize.width}/>
+          <SliderF inview={inview} images={cardList} child={"first"} width={screenSize.width}/>
       {/* } */}
     </div>
     <div className="temp1">

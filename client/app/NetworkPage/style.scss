@@ -1,0 +1,38 @@
+.card-extra {
+    width: 100%;
+    position: relative;
+    height: 238px;
+    margin-top: 80px;
+    padding: 40px 86px 0 86px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .card-extra-desc {
+        font-size: 24px;
+        color: #E3E3E3;
+        margin-bottom: 45px;
+    }
+    .button3 {
+        border: 1px solid #fff;
+        color: #fff;
+        background: transparent;
+        width: 300px;
+        height: 40px;
+    }
+    .button3:hover {
+        border: 1px solid #DDFFCB;
+        color: #DDFFCB;
+        background: rgba(255,255,255,0.1);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .card-extra {
+        padding: 32px 26px 0 26px;
+        .card-extra-desc {
+            font-size: 14px !important;
+            margin-bottom: 30px !important;
+        }
+    }
+}

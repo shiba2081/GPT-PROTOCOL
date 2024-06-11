@@ -1,7 +1,7 @@
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import "./style.scss"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import dynamic from 'next/dynamic';
 import Card from "../Card"
 import CardT from "../CardT";
@@ -13,7 +13,7 @@ const Icon = dynamic(()=> import('../Icons'))
 //   {image:Slider3,desc:'Buy, Stake & Earn More'}]
 
 export default function SliderF(props) {
-    const {images, child, width} = props;
+    const {images, child, width, inview} = props;
     const [currentSlide, setCurrentSlide] = useState(0)
     const [loaded, setLoaded] = useState(false)
     const [opacities, setOpacities] = useState([])
@@ -41,6 +41,7 @@ export default function SliderF(props) {
         },
       }
     })
+    
   
     return (
     <div className="slider-wrapper-first">
@@ -62,7 +63,7 @@ export default function SliderF(props) {
                 className={`keen-slider__slide number-slide${idx+1}`}
                 style={{ opacity: opacities[idx] }}
               >
-              {child==="third"? <CardT title={item.title} description={item.description} id={item.id}/>:<Card key={idx} img={item.img} title={item.title} description={item.description}/>}
+              {child==="third"? <CardT title={item.title} description={item.description} id={item.id}/>:<Card inview={inview} key={idx} img={item.img} title={item.title} description={item.description}/>}
               </div>
         )})}
         

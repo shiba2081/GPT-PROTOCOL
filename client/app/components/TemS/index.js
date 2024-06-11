@@ -1,8 +1,12 @@
 
+import { useRef } from 'react';
 import CardS from '../CardS';
 import './style.scss'
+import { useInView } from 'framer-motion';
 
 export default function TemS() {
+  const ref = useRef(null);
+  const inview = useInView(ref, {once:true})
   const cardsList = [
     {id:1,title:"65K",description:"Transactions Per Second"},
     {id:2,title:"2.2s",description:"Block Time"},
@@ -13,15 +17,15 @@ export default function TemS() {
   ]
   
   return (
-    <div className='cardS-section'>
+    <div ref={ref} className='cardS-section'>
       <div className='cardS-flex'>
        {cardsList.slice(0,3).map((item, index)=> {
-        return <CardS title={item.title} description={item.description} id={item.id}/>
+        return <CardS title={item.title} description={item.description} id={item.id} inview={inview}/>
        })}
        </div>
        <div className='cardS-flex'>
        {cardsList.slice(3,).map((item, index)=> {
-        return <CardS title={item.title} description={item.description} id={item.id}/>
+        return <CardS title={item.title} description={item.description} id={item.id} inview={inview}/>
        })}
        </div>
     </div>

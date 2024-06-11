@@ -4,10 +4,15 @@ import card2 from '../../assets/img/card2.png'
 import card3 from '../../assets/img/card3.png'
 import card4 from '../../assets/img/card4.png'
 import Image from 'next/image';
+import { motion } from 'framer-motion'
 
 export default function Card(props) {
   return (
-    <div className='card'>
+    <motion.div
+          initial={{ scale:0 }}
+          animate={props?.inview? {scale:1}:{}}
+          transition={{type:'spring', stiffness:100, damping:20, mass:1, 
+          }} className='card'>
         <div className='align-center'>
         {
             props.img==="card1"? 
@@ -21,6 +26,6 @@ export default function Card(props) {
         </div>
         <div className='card-title'>{props.title}</div>
         <div className='card-desc'>{props.description}</div>
-    </div>
+    </motion.div>
   );
 }

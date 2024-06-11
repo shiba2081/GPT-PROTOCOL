@@ -1,8 +1,12 @@
 
+import { motion, useInView } from 'framer-motion';
 import CardT from '../CardT';
 import './style.scss'
+import { useRef } from 'react';
 
 export default function TemT() {
+  const reft = useRef(null);
+  const inview = useInView(reft, {once:true})
   const cardsList = [
     {id:1,title:"Learn",description:"Dive into our quick guides to learn more about the Internet of AI."},
     {id:2,title:"Build",description:"Start crafting your projects with our developer tools."},
@@ -11,17 +15,25 @@ export default function TemT() {
   ]
   
   return (
-    <div className='cardT-section'>
-      <div className='cardT-flex'>
+    <div ref={reft} className='cardT-section'>
+      <motion.div
+          initial={{ scale:0 }}
+          animate={inview? {scale:1}:{}}
+          transition={{type:'spring', stiffness:100, damping:20, mass:1, }}
+          className='cardT-flex'>
        {cardsList.slice(0,2).map((item, index)=> {
         return <CardT title={item.title} description={item.description} id={item.id}/>
        })}
-       </div>
-       <div className='cardT-flex'>
+       </motion.div>
+       <motion.div
+          initial={{ scale:0 }}
+          animate={inview? {scale:1}:{}}
+          transition={{type:'spring', stiffness:100, damping:20, mass:1, delay:0.2}} 
+          className='cardT-flex'>
        {cardsList.slice(2,).map((item, index)=> {
         return <CardT title={item.title} description={item.description} id={item.id}/>
        })}
-       </div>
+       </motion.div>
     </div>
   );
 }

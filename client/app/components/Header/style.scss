@@ -10,6 +10,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 100px;
+    transition: transform 0.3s ease-in-out;
     .navigation {
         display: flex;
         gap: 32px;
@@ -77,6 +78,9 @@
         mix-blend-mode: screen;
     }
 }
+.header.hidden {
+  transform: translateY(-100%);
+}
 .scroll-top {
     position: absolute;
     right: 30px;
@@ -136,4 +140,10 @@
     .mobile {
       display: block !important;
     }
+  }
+  .gap-56 {
+    gap: 56px;
+  }
+  .gap-16 {
+    gap: 16px;
   }

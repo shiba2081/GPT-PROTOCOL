@@ -7,6 +7,7 @@ import Whatsapp from '@/app/assets/img/Community/whatsapp.png'
 import Twitter from '@/app/assets/img/Community/x.png'
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { motion } from 'framer-motion';
 const Icon = dynamic(()=> import('../Icons'))
 
 
@@ -25,7 +26,11 @@ export default function CardN(props) {
     }
   }
   return (
-    <div className='card-default cardN c-p'
+    <motion.div
+          initial={{ scale:0 }}
+          animate={props?.inview? {scale:1}:{}}
+          transition={{type:'spring', stiffness:100, damping:20, mass:1, 
+          }} className='card-default cardN c-p'
     onMouseEnter={()=> setIsHovered(true)}
     onMouseLeave={()=> setIsHovered(false)}
     onClick={()=>openLink(props?.item?.label)}>
@@ -35,6 +40,6 @@ export default function CardN(props) {
         props?.item?.label==="Whatsapp"? Whatsapp:Twitter} width={140} height={140}/>:<Icon name={props?.item?.id} fill={isHovered? "#DDFFCB":"#fff"} width={80} height={80} />}</div>
         <div className='cardn-desc'>{props?.item?.label}</div>
 
-    </div>
+    </motion.div>
   );
 }

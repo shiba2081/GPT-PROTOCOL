@@ -9,7 +9,7 @@ export default function TemB(props) {
     <div className='cardB-section'>
       <div className='cardB-flex'>
        {props.cardsList?.map((item, index)=> {
-        return <CardF title={item?.title} description={item?.description} id={item.id} animation={props?.animation}/>
+        return <CardF title={item?.title} inview={props?.inview} description={item?.description} id={item.id} animation={props?.animation}/>
        })}
        </div>
     </div>

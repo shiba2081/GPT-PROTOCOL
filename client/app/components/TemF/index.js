@@ -9,9 +9,14 @@ export default function TemF({ch}) {
   const videoRef = useRef(null);
   const leftref = useRef(null);
   const rightref = useRef(null);
-  const inview = useInView(leftref, {once:true})
   const inleftview = useInView(leftref, {once:true})
   const inrightview = useInView(rightref, {once:true})
+  const leftref1 = useRef(null);
+  const rightref1 = useRef(null);
+  const inleftview1 = useInView(leftref1, {once:true})
+  const inrightview1 = useInView(rightref1, {once:true})
+  const leftref2 = useRef(null);
+  const inleftview2 = useInView(leftref2, {once:true})
 
   const openLink = (label) => {
     if (label==="developer") {
@@ -106,11 +111,12 @@ export default function TemF({ch}) {
           <source src="/mining.mp4" type="video/mp4" />
         </video></div>
     </div>: ch === "third"?
-    <div className='TemF'>
+    <div ref={leftref1} className='TemF'>
     <motion.div
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .1}} className='left' >
+    
+          initial={{ x: '-100vw' }}
+          animate={inleftview1? {x:0}:{}}
+          transition={{type:'spring', stiffness:100, damping:20, mass:1, duration:1}} className='left' >
             <div className='lefts-head mb-30 '>Benefits</div>
             <ul>
               <li>Earn rewards by contributing computational power.</li>
@@ -132,11 +138,12 @@ export default function TemF({ch}) {
           <source src="/mining.mp4" type="video/mp4" />
         </video></div>
     </div>:ch === "fourth"?
-    <div className='TemF' style={{flexDirection:'row-reverse'}}>
+    <div ref={rightref1} className='TemF' style={{flexDirection:'row-reverse'}}>
     <motion.div
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .1}} className='left'>
+    
+          initial={{ x: '100vw' }}
+          animate={inrightview1? {x:0}:{}}
+          transition={{type:'spring', stiffness:100, damping:20, mass:1, duration:1}} className='left'>
             <div className='lefts-head mb-30'>Benefits</div>
             <ul>
               <li>Earn rewards by contributing computational power.</li>
@@ -157,11 +164,12 @@ export default function TemF({ch}) {
           <source src="/internetofai.mp4" type="video/mp4" />
         </video></div>
     </div>:
-    <div className='TemF'>
+    <div ref={leftref2} className='TemF'>
     <motion.div
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ease:[0.76, 0, 0.24, 1],duration: .1}} className='left'>
+    
+          initial={{ x: '-100vw' }}
+          animate={inleftview2? {x:0}:{}}
+          transition={{type:'spring', stiffness:100, damping:20, mass:1, duration:1}} className='left'>
             <div className='lefts-head mb-30'>Benefits</div>
             <ul>
               <li>Earn rewards by contributing computational power.</li>

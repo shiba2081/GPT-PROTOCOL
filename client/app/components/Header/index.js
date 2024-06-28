@@ -211,7 +211,7 @@ export default function Header() {
           <motion.li variants={itemVariants} className={`nav ${tab==='community' && "active"}`} onClick={()=> navigateTo('community')}>Community</motion.li>
           <motion.li variants={itemVariants} className='nav' onClick={()=> whitepaper()}>Whitepaper</motion.li>
           <motion.li variants={itemVariants} onClick={()=>openLink("buy")}><div className='ask c-p'>Buy $GPT</div></motion.li>
-          <motion.li variants={itemVariants} onClick={()=>openLink("ask")}><div className='ask c-p'>Ask GPT</div></motion.li>
+          <motion.li variants={itemVariants} onClick={()=>openLink("ask")}><div className='ask c-p'>GPT Assistant</div></motion.li>
           </motion.ul>
           
         </motion.div>
@@ -236,7 +236,7 @@ export default function Header() {
         </div>
         <div className='flex gap-16'>
         <div className='ask c-p desktop' onClick={()=>openLink("buy")}>Buy $GPT</div>
-        <div className='ask c-p desktop' onClick={()=>openLink("ask")}>Ask GPT</div>
+        <div className='ask c-p desktop' onClick={()=>openLink("ask")}>GPT Assistant</div>
         </div>
         {/* } */}
         {screenSize.height!==0 && <div className={`scroll-top ${isVisible? "a-v":"a-n"}`} style={{cursor:"pointer", top:`${screenSize.height-74}px`}}

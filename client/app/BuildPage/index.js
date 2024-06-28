@@ -4,11 +4,21 @@ import '@/app/styles/index.scss'
 import './style.scss'
 import TemB from "../components/TemB";
 import BigCard from "../components/BigCard";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Loader from "../components/Loader";
 import BigCard2 from "../components/BigCard2";
+import { useInView } from "framer-motion";
 
 export default function Build() {
+
+  const cardref1 = useRef(null);
+  const inview1 = useInView(cardref1, {once:true})
+  const cardref2 = useRef(null);
+  const inview2 = useInView(cardref2, {once:true})
+  const cardref3 = useRef(null);
+  const inview3 = useInView(cardref3, {once:true})
+  const cardref4 = useRef(null);
+  const inview4 = useInView(cardref4, {once:true})
   const cardsList1 = [
     {id:1,title:"Documentation",
     description:["System Requirements","APIs","Hardware"]},
@@ -170,17 +180,17 @@ export default function Build() {
     <div className="experiment ">
     
     <div className="tempb">
-    <div className="justify-center text-40 mb-62">Developer Tools</div>
-      <TemB cardsList={cardsList1}/>
+    <div className="justify-center text-40 mb-62" ref={cardref1}>Developer Tools</div>
+      <TemB cardsList={cardsList1} inview={inview1}/>
     </div>
     
     <div className="tempb">
-    <div className="justify-center text-40 mb-62 mt-120">Support Channels</div>
-      <TemB cardsList={cardsList2} animation="no"/>
+    <div className="justify-center text-40 mb-62 mt-120" ref={cardref2}>Support Channels</div>
+      <TemB cardsList={cardsList2} animation="no" inview={inview2}/>
     </div>
     <div className="tempb">
-    <div className="justify-center text-40 mb-62 mt-120">Our Products</div>
-      <TemB cardsList={cardsList3}/>
+    <div className="justify-center text-40 mb-62 mt-120" ref={cardref3}>Our Products</div>
+      <TemB cardsList={cardsList3} inview={inview3}/>
     </div>
     
     <div className="tempb">
@@ -193,8 +203,8 @@ export default function Build() {
     </div> */}
     
     <div className="tempb">
-    <div className="justify-center text-40 mb-62 mt-120">Contribution Guide</div>
-      <TemB cardsList={cardsList8} animation="no"/>
+    <div className="justify-center text-40 mb-62 mt-120" ref={cardref4}>Contribution Guide</div>
+      <TemB cardsList={cardsList8} animation="no" inview={inview4}/>
     </div>
 
     </div>

@@ -5,10 +5,18 @@ import './style.scss'
 import TemB from "../components/TemB";
 import TemN from "../components/TemN";
 import Loader from "../components/Loader";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 
 
 export default function Network() {
+  const cardref6 = useRef(null);
+  const inview6 = useInView(cardref6, {once:true})
+  const cardref7 = useRef(null);
+  const inview7 = useInView(cardref7, {once:true})
+  const cardref8 = useRef(null);
+  const inview8 = useInView(cardref8, {once:true})
+
   const cardsList1 = [
     {id:1,title:"Block Explorer",
     description:[""]},
@@ -92,13 +100,13 @@ export default function Network() {
     <div className="experiment ">
     
     <div className="tempb">
-    <div className="justify-center text-40 mb-62">Statistics: Real-time network data</div>
-      <TemB cardsList={cardsList1}/>
+    <div className="justify-center text-40 mb-62" ref={cardref6}>Statistics: Real-time network data</div>
+      <TemB cardsList={cardsList1} inview={inview6}/>
     </div>
     
     <div className="temp1">
-    <div className="justify-center text-48 mb-62 mt-120">Governance</div>
-      <TemN child={"first"}/>
+    <div className="justify-center text-48 mb-62 mt-120" ref={cardref7}>Governance</div>
+      <TemN child={"first"} inview={inview7}/>
     </div>
     <div className="card-second">
     <div className='card-default card-extra'>
@@ -110,8 +118,8 @@ export default function Network() {
     </div>
     
     <div className="temp1">
-    <div className="justify-center text-48 mb-62 mt-120">Security: Measures for Network Integrity</div>
-      <TemN child={"second"}/>
+    <div className="justify-center text-48 mb-62 mt-120" ref={cardref8}>Security: Measures for Network Integrity</div>
+      <TemN child={"second"} inview={inview8}/>
     </div>
     
     </div>

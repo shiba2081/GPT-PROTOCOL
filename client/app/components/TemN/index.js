@@ -5,7 +5,7 @@ import CardN from '../CardN';
 import CardBig from '../CardBig';
 const Icon = dynamic(()=> import('../Icons'))
 
-export default function TemN({child}) {
+export default function TemN({child,inview}) {
     const cardList = [
         {id:"gov1",label:"Community-driven governance model"},
         {id:"gov2",label:"Token-based voting system for democratic decision-making"},
@@ -25,11 +25,11 @@ export default function TemN({child}) {
     <div className='TemN'>
         <div className='flex gap-20 flexn'>
         <div className='left'>
-            <CardBig child={child}/>
+            <CardBig child={child} inview={inview}/>
         </div>
         <div className='right'>
             {cardList.map((item)=> {
-                return <CardN item={item}/>
+                return <CardN item={item} inview={inview}/>
             })}
         </div>
         </div>
@@ -38,11 +38,11 @@ export default function TemN({child}) {
         <div className='flex gap-20 flexn'>
         <div className='right'>
             {cardList1.map((item)=> {
-                return <CardN item={item}/>
+                return <CardN item={item} inview={inview}/>
             })}
         </div>
         <div className='left'>
-            <CardBig child={child}/>
+            <CardBig child={child} inview={inview}/>
         </div>
         </div>
     </div>

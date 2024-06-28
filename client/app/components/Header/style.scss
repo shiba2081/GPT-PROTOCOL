@@ -24,6 +24,7 @@
     }
     .nav:hover {
         color: #83ff31;
+        scale: 1.04;
     }
     .menu {
         position: relative;
@@ -61,7 +62,8 @@
         justify-content: center;
         align-items: center;
         height: 36px;
-        width: 134px;
+        // width: 134px;
+        padding: 0 32px 0 32px;
         border: 1px solid #fff;
         border-radius: 24px;
         // transition: background-color 0.3s, border-color 0.3s;
@@ -73,6 +75,7 @@
     .ask:hover {
         border-color: #83ff31;
         background: #245a00;
+        scale: 1.04;
     }
     .logo {
         mix-blend-mode: screen;

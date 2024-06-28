@@ -7,16 +7,21 @@ import Horse1 from '@/app/assets/img/Community/horse1.png'
 import Global from '@/app/assets/img/Community/global.png'
 import Global1 from '@/app/assets/img/Community/global1.png'
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import '@/app/styles/index.scss'
 import './style.scss'
 import CardN from "../components/CardN";
 import Loader from "../components/Loader";
+import { motion, useInView } from "framer-motion";
 
 
 export default function Community() {
   const [isHovered, setIsHovered] = useState(false)
   const [isHovered1, setIsHovered1] = useState(false)
+  const cardref9 = useRef(null);
+  const inview9 = useInView(cardref9, {once:true})
+  const cardref10 = useRef(null);
+  const inview10 = useInView(cardref10, {once:true})
   const cardList = [
     {label:"Discord"},
     {label:"Telegram"},
@@ -58,7 +63,6 @@ export default function Community() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   return (
     <div style={{position:"relative"}}>
     {screenSize.width===0?
@@ -108,26 +112,38 @@ export default function Community() {
     </div>}
     
     <div className="experiment ">
-      <div className="justify-center text-40 mb-62">Join Us</div>
+      <div className="justify-center text-40 mb-62" ref={cardref9}>Join Us</div>
       <div className="card-second cardC">
         {
           cardList.map((item)=> {
-            return <CardN item={item} child={"second"}/>
+            return <CardN item={item} child={"second"} inview={inview9}/>
           })
         }
       </div>
-      <div id='gpt' className="justify-center text-40 mb-62 mt-120">Buy $GPT</div>
+      <div id='gpt' className="justify-center text-40 mb-62 mt-120" ref={cardref10}>Buy $GPT</div>
       <div className="card-second cardC-buy">
-        <div
+      <motion.div
+          initial={{ scale:0 }}
+          animate={inview10? {scale:1}:{}}
+          transition={{type:'spring', stiffness:100, damping:20, mass:1, 
+          }}
         style={{cursor:"pointer"}}
         onClick={()=>openLink("uniSwap")}
         onMouseEnter={()=> setIsHovered(true)}
-        onMouseLeave={()=> setIsHovered(false)}>{isHovered?<Image src={Horse1} width={160} height={160}/>:<Image src={Horse} width={160} height={160}/>}</div>
-        <div
+        onMouseLeave={()=> setIsHovered(false)}>{isHovered?<Image src={Horse1} width={160} height={160}/>:<Image src={Horse} width={160} height={160}/>}
+
+        </motion.div>
+        <motion.div
+          initial={{ scale:0 }}
+          animate={inview10? {scale:1}:{}}
+          transition={{type:'spring', stiffness:100, damping:20, mass:1, 
+          }}
         style={{cursor:"pointer"}}
         onClick={()=>openLink("mexc")}
         onMouseEnter={()=> setIsHovered1(true)}
-        onMouseLeave={()=> setIsHovered1(false)}>{isHovered1?<Image src={Global1} width={160} height={160}/>:<Image src={Global} width={160} height={160}/>}</div>
+        onMouseLeave={()=> setIsHovered1(false)}>{isHovered1?<Image src={Global1} width={160} height={160}/>:<Image src={Global} width={160} height={160}/>}
+
+        </motion.div>
       </div>
     </div>
     </div>

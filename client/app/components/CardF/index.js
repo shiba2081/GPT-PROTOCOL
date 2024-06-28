@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './style.scss'
 import Image from 'next/image';
 
@@ -33,7 +34,11 @@ export default function CardF(props) {
     }
   }
   return (
-    <div 
+    <motion.div
+          initial={{ scale:0 }}
+          animate={(props?.inview)? {scale:1}:{}}
+          transition={{type:'spring', stiffness:100, damping:20, mass:1, 
+          }} 
     className={`card-default cardF ${props?.animation==="no" && "card-hw"} ${(props?.title==="Join Discord" || props?.title==="GPT Bounty Program" || props?.title==="Block Explorer") && "c-p"}`}
     onClick={()=>openLink(props?.title)}
     >
@@ -50,6 +55,6 @@ export default function CardF(props) {
       })}
       </div>
       }
-    </div>
+    </motion.div>
   );
 }

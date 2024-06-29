@@ -26,7 +26,7 @@ export default function Header() {
 
   const openLink = (label) => {
     if (label==="ask") {
-      window.open("https://assistant.gphelpers.com/")
+      window.open("https://assistant.gptprotocol.io")
     }
     else if (label==="buy") {
       navigateTo('community?buy=gpt')

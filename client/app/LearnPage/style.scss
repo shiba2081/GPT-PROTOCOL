@@ -35,4 +35,38 @@
         }
     }
 }
+@media screen and (min-width: 1220px) and (max-width: 1380px) {
+    .arch {
+        img {
+            width: 600px !important;
+            height: 330px !important;
+        }
+    }
+    .v1 {
+        // flex-direction: column;
+        // width: 100% !important;
+
+        iframe {
+            width: 551px !important;
+            height: 551px !important;
+        }
+    }
+}
+@media screen and (min-width: 820px) and (max-width: 1220px) {
+    .arch {
+        img {
+            width: 600px !important;
+            height: 330px !important;
+        }
+    }
+    .v1 {
+        // flex-direction: column;
+        // width: 100% !important;
+
+        iframe {
+            width: 351px !important;
+            height: 351px !important;
+        }
+    }
+}
 

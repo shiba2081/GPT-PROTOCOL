@@ -7,6 +7,190 @@
     display: flex;
     justify-content: center;
 }
+.calendarWrapper {
+    color: #fff !important;
+    .modeWrapper .modeButton:nth-child(1) {
+        display: none; /* This hides the Year button */
+    }
+    .calendarDayOfWeek {
+        margin-bottom: 12px;
+    }
+    .calendarHeader {
+        h1 {
+            color: #DDFFCB !important;
+            font-size: 0.9em;
+        }
+    }
+    .calendarHeaderButtons {
+        color: #83ff31 !important;
+    }
+    .modeButtonActive {
+        color: #83ff31 !important;
+    }
+    .modeButton:hover {
+        color: #83ff31 !important;
+    }
+    .weekRow {
+        display: flex;
+        // gap: 12px;
+        border: none !important;
+        // margin-bottom: 12px;
+    }
+    .dayCell {
+        display: inline-block;
+        box-sizing: border-box;
+        position: relative;
+        text-align: left !important;
+        overflow: hidden;
+        cursor: pointer;
+        width: calc(100% / 7);
+        height: 90px;
+        // background: linear-gradient(#131512, #090A09);
+        // border-radius: 10px;
+        // /* transition: background-color 0.4s; */
+        // background-clip: padding-box;
+        .dayDate {
+            position: absolute;
+            top: 12px;
+            left: 6px;
+            // padding: 12px !important;
+            .dayText {
+                height: 25px !important;
+                width: 25px !important;
+                font-size: 0.9em !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    .currentDay {
+        background-color: #245a00 !important;
+    }
+    // .dayCell::before {
+    //     content: "";
+    //     position: absolute;
+    //     inset: 0;
+    //     border-radius: 10px;
+    //     padding: 1px; /* control the border thickness */
+    //     background: linear-gradient(rgba(86,97,84,1), rgba(61,57,68,0.51));;
+    //     -webkit-mask: 
+    //       linear-gradient(#fff 0 0) content-box, 
+    //       linear-gradient(#fff 0 0);
+    //     -webkit-mask-composite: xor;
+    //             mask-composite: exclude;
+    //     pointer-events: none;
+    //   }
+    .dayCellEventWrapper {
+        height: 100%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        .dayCellEvent {
+            // height: 100% !important;
+            display: flex;
+            align-items: end;
+            width: 94% !important;
+            text-overflow: ellipsis;
+            border-radius: 4px !important;
+            margin-bottom: 6px !important;
+        }
+    }
+}
+
+
+@media screen and (min-width: 720px) {
+.calendarWrapper {
+    color: #fff !important;
+    .modeWrapper .modeButton:nth-child(1) {
+        display: none; /* This hides the Year button */
+    }
+    .calendarDayOfWeek {
+        margin-bottom: 12px;
+    }
+    .calendarHeader {
+        h1 {
+            color: #DDFFCB !important;
+            font-size: 1.9em;
+        }
+    }
+    .calendarHeaderButtons {
+        color: #83ff31 !important;
+    }
+    .modeButtonActive {
+        color: #83ff31 !important;
+    }
+    .modeButton:hover {
+        color: #83ff31 !important;
+    }
+    .weekRow {
+        display: flex;
+        gap: 12px;
+        border: none !important;
+        margin-bottom: 12px;
+    }
+    .dayCell {
+        display: inline-block;
+        box-sizing: border-box;
+        position: relative;
+        text-align: right;
+        overflow: hidden;
+        cursor: pointer;
+        width: calc(100% / 7);
+        height: 90px;
+        background: linear-gradient(#131512, #090A09);
+        border-radius: 10px;
+        /* transition: background-color 0.4s; */
+        background-clip: padding-box;
+        .dayDate {
+            position: absolute;
+            top: 12px;
+            left: 6px;
+            // padding: 12px !important;
+            .dayText {
+                height: 40px !important;
+                width: 40px !important;
+                font-size: 1.9em !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    .currentDay {
+        background-color: #245a00 !important;
+    }
+    .dayCell::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 10px;
+        padding: 1px; /* control the border thickness */
+        background: linear-gradient(rgba(86,97,84,1), rgba(61,57,68,0.51));;
+        -webkit-mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude;
+        pointer-events: none;
+      }
+    .dayCellEventWrapper {
+        height: 100%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        .dayCellEvent {
+            // height: 100% !important;
+            display: flex;
+            align-items: end;
+            width: 94% !important;
+            text-overflow: ellipsis;
+            border-radius: 4px !important;
+            margin-bottom: 6px !important;
+        }
+    }
+}
+}
 
 @media screen and (max-width: 720px) {
     .cardC {

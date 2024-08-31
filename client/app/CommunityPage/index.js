@@ -1,5 +1,6 @@
 'use client'
 import Image from "next/image";
+import Calendar from 'react-awesome-calendar';
 
 import Horse from '@/app/assets/img/Community/horse.png'
 import Horse1 from '@/app/assets/img/Community/horse1.png'
@@ -28,6 +29,31 @@ export default function Community() {
     {label:"Whatsapp"},
     {label:"Twitter"}
   ]
+  const events = [{
+    id: 1,
+    color: '#245a00',
+    offsetHeight:'100%',
+    from: '2024-09-07T18:00:00+00:00',
+    to: '2024-09-07T19:00:00+00:00',
+    title: 'Wiki Finance Expo Bangkok 2024'
+}, 
+{
+    id: 2,
+    color: '#245a00',
+    offsetHeight:'100%',
+    from: '2024-09-09T13:00:00+00:00',
+    to: '2024-09-11T13:00:00+00:00',
+    title: 'FinovateFall'
+}, 
+// {
+//     id: 3,
+//     color: '#245a00',
+//     offsetHeight:'100%',
+//     from: '2024-08-05T13:00:00+00:00',
+//     to: '2024-08-05T20:00:00+00:00',
+//     title: 'This is also another event'
+// }
+];
 
   const openLink = (label) => {
     if (label==="uniSwap") {
@@ -63,6 +89,7 @@ export default function Community() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+  
   return (
     <div style={{position:"relative"}}>
     {screenSize.width===0?
@@ -120,6 +147,12 @@ export default function Community() {
           })
         }
       </div>
+      <div className="justify-center text-40 mb-62 mt-120" ref={cardref9}>Upcoming Events</div>
+      <div className="card-second">
+      <Calendar
+                events={events}
+            />
+      </div>
       <div id='gpt' className="justify-center text-40 mb-62 mt-120" ref={cardref10}>Buy $GPT</div>
       <div className="card-second cardC-buy">
       <motion.div
@@ -145,6 +178,7 @@ export default function Community() {
 
         </motion.div>
       </div>
+      
     </div>
     </div>
   );

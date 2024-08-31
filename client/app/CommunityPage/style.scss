@@ -12,16 +12,26 @@
     .modeWrapper .modeButton:nth-child(1) {
         display: none; /* This hides the Year button */
     }
+    .modeWrapper {
+        margin-bottom: 16px;
+    }
     .calendarDayOfWeek {
         margin-bottom: 12px;
+        margin-top: 20px;
+        div {
+            text-align: left;
+        }
     }
     .calendarHeader {
+        border-bottom: 1px solid rgba(233, 233, 233,0.5) !important;
         h1 {
             color: #DDFFCB !important;
             font-size: 0.9em;
+            text-align: center;
         }
     }
     .calendarHeaderButtons {
+        margin-top: 0 !important;
         color: #83ff31 !important;
     }
     .modeButtonActive {
@@ -105,16 +115,27 @@
     .modeWrapper .modeButton:nth-child(1) {
         display: none; /* This hides the Year button */
     }
+    .modeWrapper {
+        margin-bottom: 32px;
+    }
     .calendarDayOfWeek {
         margin-bottom: 12px;
+        margin-top: 16px;
+        div {
+            text-align: left;
+        }
     }
     .calendarHeader {
+        border-bottom: 1px solid rgba(233, 233, 233,0.5) !important;
         h1 {
             color: #DDFFCB !important;
             font-size: 1.9em;
+            text-align: center;
         }
     }
     .calendarHeaderButtons {
+        margin-top: 0 !important;
+        margin-bottom: 32px !important;
         color: #83ff31 !important;
     }
     .modeButtonActive {

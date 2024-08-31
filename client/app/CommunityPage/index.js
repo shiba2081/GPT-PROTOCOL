@@ -32,7 +32,6 @@ export default function Community() {
   const events = [{
     id: 1,
     color: '#245a00',
-    offsetHeight:'100%',
     from: '2024-09-07T18:00:00+00:00',
     to: '2024-09-07T19:00:00+00:00',
     title: 'Wiki Finance Expo Bangkok 2024'
@@ -40,7 +39,6 @@ export default function Community() {
 {
     id: 2,
     color: '#245a00',
-    offsetHeight:'100%',
     from: '2024-09-09T13:00:00+00:00',
     to: '2024-09-11T13:00:00+00:00',
     title: 'FinovateFall'
@@ -48,7 +46,6 @@ export default function Community() {
 // {
 //     id: 3,
 //     color: '#245a00',
-//     offsetHeight:'100%',
 //     from: '2024-08-05T13:00:00+00:00',
 //     to: '2024-08-05T20:00:00+00:00',
 //     title: 'This is also another event'
